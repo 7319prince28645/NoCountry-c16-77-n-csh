@@ -11,6 +11,7 @@ function App() {
       <Navbar/>
       <Populares/>
       <Experiencias/>
+      <div>hice un push tienes que verlo en tu maquina</div>
     </>
   )
 }
