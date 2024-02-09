@@ -14,6 +14,8 @@ function App() {
       <div>hice un push tienes que verlo en tu maquina</div>
       <h1>que tal¡</h1>
       <h2>segundo</h2>
+      asdsadsadasdasd
+      sadsadas
     </>
   )
 }
