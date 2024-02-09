@@ -13,6 +13,7 @@ function App() {
       <Experiencias/>
       <div>hice un push tienes que verlo en tu maquina</div>
       <h1>esto tienes que hacer merge</h1>
+      asdasdadas
     </>
   )
 }
