@@ -1,8 +1,10 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Experiencias from './pages/Experiencias'
 import Navbar from './pages/Navbar'
 import Populares from './pages/Populares'
+import Cursos from './pages/Cursos'
+import Footer from './pages/Footer'
 
 function App() {
 
@@ -11,11 +13,9 @@ function App() {
       <Navbar/>
       <Populares/>
       <Experiencias/>
-      <div>hice un push tienes que verlo en tu maquina</div>
-      <h1>que tal¡</h1>
-      <h2>segundo</h2>
-      asdsadsadasdasd
-      sadsadas
+      <Cursos/>
+      <Footer/>
+      
     </>
   )
 }
