@@ -1,24 +1,23 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
-import Experiencias from './pages/Experiencias'
-import Navbar from './pages/Navbar'
-import Populares from './pages/Populares'
-import Cursos from './pages/Cursos'
-import Footer from './pages/Footer'
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { Route, Routes, useLocation } from 'react-router-dom'
+import Navbar from "./pages/sctruct/Navbar";
+import Homee from "./pages/Homee";
+import Footer from "./pages/sctruct/Footer";
+import PagesLogin from "./pages/accounts/PagesLogin";
 function App() {
-
+  const location = useLocation();
+  const pathname = location.pathname !== "/login";
   return (
     <>
-      <Navbar/>
-      <Populares/>
-      <Experiencias/>
-      <Cursos/>
-      <Footer/>
-      
+    {pathname && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Homee/>} />
+        <Route path="/login" element={<PagesLogin/>} />
+      </Routes>
+    {pathname && <Footer/>}
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;
