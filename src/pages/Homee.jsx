@@ -1,13 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import useApiProducts	 from "../services/ApiProducts";
+import fetchUserPractice from "../services/UserPractice";
 function Homee() {
   const [data, setData] = useState([]);
-
+  const [user, setUser] = useState([]);
   const getApiProducts = async () => {
     try {
-      const response = await fetch("https://fakestoreapi.com/products")
-      const data = await response.json();
-      setData(data);
+      const response = await useApiProducts();
+      const response2 = await fetchUserPractice();
+      setUser(response2);
+      setData(response);
     } catch (error) {
       console.error(error);
     }
@@ -15,6 +18,7 @@ function Homee() {
   useEffect(() => {
     getApiProducts();
   }, []);
+  console.log(user);
   console.log(data);
   return (
     <>
@@ -23,8 +27,8 @@ function Homee() {
       <h1 className="text-4xl font-bold mb-8">Tienda de Ropa</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {data && data.length === 0 && <p>Cargando...</p>}
-        {data?.map((product) => (
-          <div key={product.id} className="bg-white p-4 rounded-md shadow-md">
+        {data?.map((product, index) => (
+          <div key={index} className="bg-white p-4 rounded-md shadow-md">
             <img
               src={product.image}
               alt={product.name}
