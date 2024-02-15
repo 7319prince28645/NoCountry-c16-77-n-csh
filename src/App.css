@@ -1,0 +1,15 @@
+details {
+    padding: .5rem;
+    margin: .5rem;
+    cursor: pointer;
+}
+
+summary {
+    list-style: none; 
+}
+
+summary::before {
+    content: '+';
+    padding-right: 1rem;
+
+}
