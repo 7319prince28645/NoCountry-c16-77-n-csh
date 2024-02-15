@@ -5,6 +5,7 @@ import Navbar from "./pages/sctruct/Navbar";
 import Homee from "./pages/Homee";
 import Footer from "./pages/sctruct/Footer";
 import PagesLogin from "./pages/accounts/PagesLogin";
+import Carrousel from "./pages/sctruct/Carrousel";
 function App() {
   const location = useLocation();
   const pathname = location.pathname !== "/login";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<PagesLogin/>} />
       </Routes>
     {pathname && <Footer/>}
+    
     </>
   );
 }

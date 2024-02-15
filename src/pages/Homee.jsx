@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import useApiProducts	 from "../services/ApiProducts";
 import fetchUserPractice from "../services/UserPractice";
+
 function Homee() {
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);

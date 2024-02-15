@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Carrousel from './Carrousel'
 function Navbar() {
   return (
+    <>
     <div className='flex h-[48px] justify-around py-8 items-center'>
         <p>Logo</p>
         <label htmlFor="search" >
@@ -13,6 +15,8 @@ function Navbar() {
             <p>Carrito</p>
         </article>
     </div>
+    <Carrousel/>
+    </>
   )
 }
 
