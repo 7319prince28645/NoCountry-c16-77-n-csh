@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div className="text-white">
       <div className="bg-[#2166ae] p-2">
-        <form action="" method="post" className='text-center xl:items-center xl:space-y-0 2xl:flex 2xl:justify-center'>
+        <form action="" method="post" className='text-center xl:items-center xl:space-y-0 xl:flex xl:justify-center xl:gap-3'>
           <label className='text-xl uppercase 2xl:px-5 2xl:m-a 2xl:text-2xl 2xl:uppercase font-bold'>
           Enterate de las mejores ofertas
           </label>
