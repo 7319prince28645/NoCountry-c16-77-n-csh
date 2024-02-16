@@ -10,13 +10,13 @@ function Footer() {
   return (
     <div className="text-white">
       <div className="bg-[#2166ae] p-2">
-        <form action="" method="post" className='text-center space-y-3 xl:space-y-0 2xl:flex 2xl:justify-center'>
-          <label className='text-xl uppercase 2xl:px-5 2xl:text-2xl 2xl:uppercase font-bold'>
+        <form action="" method="post" className='text-center xl:items-center xl:space-y-0 xl:flex xl:justify-center xl:gap-3'>
+          <label className='text-xl uppercase 2xl:px-5 2xl:m-a 2xl:text-2xl 2xl:uppercase font-bold'>
           Enterate de las mejores ofertas
           </label>
           <div>
-          <input type="text" placeholder='Ingresa tu email' className=' text-[#7f7f7f] focus:outline-none text-left pl-1 pr-20 2xl:pr-28 py-1 bg-[#E5F1FA]'/>
-          <button className='bg-[#7f7f7f] py-1 px-2 2xl:px-5 uppercase font-semibold rounded-r-3xl hover:bg-[#C9C9C9] hover:transition hover:duration-500 hover:text-[#7f7f7f]'>Suscribite Ahora</button>
+          <input type="text" placeholder='Ingresa tu email' className='my-3 text-[#7f7f7f] focus:outline-none text-left pl-1 pr-20 2xl:pr-28 py-1 bg-[#E5F1FA]'/>
+          <button className='bg-[#7f7f7f] py-1 px-2 2xl:px-5 uppercase font-semibold rounded-3xl sm:rounded-l-none xl:rounded-r-3xl hover:bg-[#C9C9C9] hover:transition hover:duration-500 hover:text-[#7f7f7f]'>Suscribite Ahora</button>
           </div>
         </form>
       </div>
