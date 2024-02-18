@@ -1,0 +1,47 @@
+.barraInferior{
+ background-color:#3e86d5;
+ color: #fdf0d5;
+ font-size: x-large;
+ display: flex;
+ justify-content: center;
+ font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.navbar{
+    background-color: #e5f1fa;
+    font-family: "Economica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    display: flex;
+     
+}
+
+.carrito{
+    width: 25px;
+    height: 25px;
+    
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+}
+
+#logitos{
+    display:inline-flex;
+}
+#lupa{
+    width: 25px;
+}
+
+#buscador{
+  width: 800px;
+  border-top-left-radius: 10px; 
+  border-bottom-left-radius: 10px;
+  margin-left: 195px;
+   
+}

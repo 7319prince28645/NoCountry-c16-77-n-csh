@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import useApiProducts	 from "../services/ApiProducts";
 import fetchUserPractice from "../services/UserPractice";
 import CarrouselCards from "./sctruct/CarrouselCards";
+import Carrousel from './sctruct/Carrousel';
 
 function Homee() {
   const [data, setData] = useState([]);
@@ -24,6 +25,7 @@ function Homee() {
   console.log(data);
   return (
     <>
+    <Carrousel/>
     <CarrouselCards/>
     <div className="container mx-auto mt-8">
       <h1 className="text-4xl font-bold mb-8">Tienda de Ropa</h1>
