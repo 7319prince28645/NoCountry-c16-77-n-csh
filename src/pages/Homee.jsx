@@ -6,6 +6,7 @@ import CarrouselCards from "./sctruct/CarrouselCards";
 import CategoryCards from "./sctruct/CategoryCards";
 import Carrousel from "./sctruct/Carrousel";
 
+
 function Homee() {
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);
@@ -52,6 +53,7 @@ function Homee() {
         ))}
       </div>
     </div>
+    
     </>
   );
 }

@@ -1,3 +1,7 @@
+input {
+    all: unset;
+}
+
 .barraInferior{
  background-color:#3e86d5;
  color: #fdf0d5;
@@ -12,36 +16,83 @@
 
 .navbar{
     background-color: #e5f1fa;
-    font-family: "Economica", sans-serif;
-    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
     font-style: normal;
-    font-size: 30px;
-    display: flex;
-     
+ 
 }
 
 .carrito{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     
 }
 
 #logo{
     width: 100px;
-    height: 100px;
 }
 
-#logitos{
-    display:inline-flex;
-}
 #lupa{
-    width: 25px;
+    display: flex;
+    flex-direction: row;
+    width: 20px;
+}
+
+@media (min-width: 768px) {
+    #lupa {
+      width: 90px;
+    }
 }
 
 #buscador{
   width: 800px;
-  border-top-left-radius: 10px; 
-  border-bottom-left-radius: 10px;
-  margin-left: 150px;
-   
+  border-top-left-radius: 6px; 
+  border-bottom-left-radius: 6px;
+  background-color: #fdf0d5;
 }
+
+form input:hover {
+    box-shadow: 0 0 5px gray;
+  }
+  
+  form input:focus {
+    box-shadow: 0 0 5px #3786da;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0.9rem;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    width: 300px; 
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 100;
+  }
+  
+
+  .dropdown-content .dropdown {
+    position: relative;
+    width: 100%; 
+  }
+  
+  .dropdown-content .dropdown .dropdown-content {
+    top: 0;
+    left: 100%; 
+    display: none; 
+    width: 200px; 
+  }
+  
+  .dropdown-content .dropdown:hover .dropdown-content {
+    display: block; 
+  }

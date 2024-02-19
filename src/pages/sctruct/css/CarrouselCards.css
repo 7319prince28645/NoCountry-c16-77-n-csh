@@ -1,17 +1,17 @@
 .divContenedor{
-    background-color: rgb(190, 184, 184);
     display: flex;
-    justify-content: space-between;
-    margin: 3px;
+    justify-content: center;
 }
 .card{
+    padding: 2rem;
     border: 1px;
-   
     margin: 2px;
     transition: transform 0.3s ease-in-out;
     
 }
 .card:hover{
-box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.5);
-transform: scale(1.05);
+    -webkit-box-shadow: 3px 3px 43px -8px rgba(61,61,61,1);
+    -moz-box-shadow: 3px 3px 43px -8px rgba(61,61,61,1);
+    box-shadow: 3px 3px 43px -8px rgba(61,61,61,1);
+    transform: scale(0.97);
 }
