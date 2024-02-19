@@ -27,7 +27,7 @@ export default function App() {
     <div>
       <MDBNavbar expand="lg" className="xl:px-10">
         <MDBContainer fluid>
-          <MDBNavbarBrand href="#" className="text-light">
+          <MDBNavbarBrand href="/" className="text-light">
             <img id="logo" className="w-1/2" src={logo} alt="carrito" />
           </MDBNavbarBrand>
 

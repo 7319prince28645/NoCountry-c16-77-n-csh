@@ -3,7 +3,13 @@ import { useLocation, useParams } from "react-router-dom";
 import Datos from "../lib/datos";
 import { useState } from "react";
 import { data } from "autoprefixer";
+import '../pages/sctruct/CarrouselCards';
+import ima4 from '../assets/a34.webp';
+
+
+
 function Productos() {
+  const [cargarMas,setCargarMas]= useState(7);
   const [dataFilter, setDataFilter] = useState([]);
   const { id } = useParams();
   const category = {
@@ -109,34 +115,38 @@ function Productos() {
             )}
           </span>
         </aside>
-        <article>
+        <article className="flex flex-col items-center">
           <div className="grid grid-cols-4 gap-4">
-            {(dataFilter.length > 0 ? dataFilter : caterogy1).map(
+
+            {(dataFilter.length > 0 ? dataFilter : caterogy1).slice(0,cargarMas).map(
               (value, index) => (
-                <div key={index} className="bg-white p-4 rounded-md shadow-md">
+                <div key={index} className="card">
                   <img
-                    src={value.images[0]}
+                    src={ima4}
                     alt={value.descripcion}
                     className="w-full h-48 object-cover mb-4 rounded-md"
                   />
-                  <h2 className="text-lg font-semibold mb-2">
+                  <p className=" text-center  text-3xl text-red-700">
+                    ${value.precios[1]}
+                  </p>
+                  <h2 className=" text-center text-2xl mt-8 font-semibold">
                     {value.descripcion}
                   </h2>
-                  <p className="text-gray-600 mb-4">
-                    Precio: ${value.precios[1]}
+
+                  <p className="text-center text-blue-500 ">
+                    Samsung
                   </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-blue-500 font-bold">
-                      Ver Detalles
-                    </span>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">
-                      Agregar al carrito
-                    </button>
-                  </div>
+
                 </div>
               )
             )}
+
           </div>
+
+         {cargarMas!==21&& <button className="text-center rounded-3xl bg-black text-white p-2 px-4 "  onClick={()=>setCargarMas(cargarMas+7)}>
+            Cargar mas productos
+          </button>}
+
         </article>
       </main>
     </div>
