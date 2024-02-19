@@ -7,7 +7,7 @@ import CategoryCards from "./sctruct/CategoryCards";
 import Carrousel from "./sctruct/Carrousel";
 import datos from "../lib/datos";
 
-
+import VerOfertas from "./sctruct/VerOfertas";
 
 function Homee() {
   const [data, setData] = useState([]);
@@ -28,6 +28,7 @@ function Homee() {
  
   return (
     <>
+    <VerOfertas/>
     <Carrousel/>
     <CategoryCards/>
     <CarrouselCards/>
