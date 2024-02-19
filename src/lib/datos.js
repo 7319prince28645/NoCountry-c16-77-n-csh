@@ -40,7 +40,7 @@ const productsData = {
         profundidad: 10
       },
       colores: ["negro", "blanco", "azul"],
-      cuotas: [3, 6, 9, 12]
+      cuotas: "no"
     },
     // Add more celulares products here
     ...Array.from({ length: 20 }, (_, index) => ({
