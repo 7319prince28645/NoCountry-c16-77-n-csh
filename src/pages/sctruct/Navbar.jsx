@@ -18,7 +18,7 @@ import favoritos from "../../assets/favorito.png";
 import logo from "../../assets/logo.png";
 import usuario from "../../assets/usuario2.png";
 import buscar from "../../assets/lupa.png";
-
+import { Link } from "react-router-dom";
 export default function App() {
   const [openBasic, setOpenBasic] = useState(false);
 
@@ -27,7 +27,7 @@ export default function App() {
       <MDBNavbar expand="lg">
         <MDBContainer fluid>
           <MDBNavbarBrand href="#" className="text-light">
-            <img id="logo" src={logo} alt="carrito" />
+           <Link to={"/"}> <img id="logo" src={logo} alt="carrito" /></Link>
           </MDBNavbarBrand>
 
           <MDBNavbarToggler
