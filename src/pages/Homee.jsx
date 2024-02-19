@@ -24,9 +24,7 @@ function Homee() {
   useEffect(() => {
     getApiProducts();
   }, []);
-  console.log(user);
-  console.log(data);
-  console.log(datos);
+ 
   return (
     <>
     <Carrousel/>
