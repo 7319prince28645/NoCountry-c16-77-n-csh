@@ -5,6 +5,8 @@ import fetchUserPractice from "../services/UserPractice";
 import CarrouselCards from "./sctruct/CarrouselCards";
 import CategoryCards from "./sctruct/CategoryCards";
 import Carrousel from "./sctruct/Carrousel";
+import datos from "../lib/datos";
+
 
 
 function Homee() {
@@ -23,8 +25,7 @@ function Homee() {
   useEffect(() => {
     getApiProducts();
   }, []);
-  console.log(user);
-  console.log(data);
+ 
   return (
     <>
     <Carrousel/>
