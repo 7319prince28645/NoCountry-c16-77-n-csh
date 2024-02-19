@@ -16,7 +16,6 @@ import carrito from "../../assets/Carrito.png";
 import favoritos from "../../assets/favorito.png";
 import logo from "../../assets/logo-2.png";
 import usuario from "../../assets/usuario2.png";
-
 import abajo from '../../assets/down.png';
 import derecha from '../../assets/right.png';
 
