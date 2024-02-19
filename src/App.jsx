@@ -12,12 +12,12 @@ function App() {
   const pathname = location.pathname !== "/login";
   return (
     <>
-    {pathname && <Navbar/>}
+    {pathname && <Navbar />}
       <Routes>
         <Route path="/" element={<Homee/>} />
         <Route path="/login" element={<PagesLogin/>} />
       </Routes>
-    {pathname && <Footer/>}
+    {pathname && <Footer />}
     
     </>
   );
