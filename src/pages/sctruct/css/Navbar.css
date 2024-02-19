@@ -45,10 +45,16 @@ input {
 }
 
 #buscador{
-  width: 800px;
+  width: 300px;
   border-top-left-radius: 6px; 
   border-bottom-left-radius: 6px;
   background-color: #fdf0d5;
+}
+
+@media (min-width: 768px) {
+  #buscador {
+    width: 400px;
+  }
 }
 
 form input:hover {

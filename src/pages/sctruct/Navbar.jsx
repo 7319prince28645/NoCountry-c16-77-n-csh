@@ -25,9 +25,9 @@ export default function App() {
   return (
     <>
     <div>
-      <MDBNavbar expand="lg" className="xl:px-10">
+      <MDBNavbar expand="lg" className="lg:px-10">
         <MDBContainer fluid>
-          <MDBNavbarBrand href="#" className="text-light">
+          <MDBNavbarBrand href="/" className="text-light">
             <img id="logo" className="w-1/2" src={logo} alt="carrito" />
           </MDBNavbarBrand>
 
@@ -41,7 +41,7 @@ export default function App() {
           </MDBNavbarToggler>
 
           <MDBCollapse navbar open={openBasic}>
-            <MDBNavbarNav className="navbar grid grid-cols-1 gap-3 xl:pl-10 xl:flex">
+            <MDBNavbarNav className="navbar grid grid-cols-1 gap-3 md:flex">
                     <div className="dropdown flex items-center px-0 text-sm xl:text-base hover:cursor-pointer">
                       <span className="flex items-center gap-1 mt-2 uppercase">Categorias <span><img src={abajo} className="w-1/2" alt="" /></span></span>
                       <div className="dropdown-content space-y-3 mt-3">
@@ -95,9 +95,9 @@ export default function App() {
                     </div>
 
             <span className="flex justify-center xl:justify-end">
-              <form className="flex w-2/3 xl:w-1/2">
+              <form className="flex w-2/3 md:w-1/3 lg:mr-10">
                 <input
-                  className="mx-auto text-sm xl:text-lg px-2"
+                  className="text-sm xl:text-lg px-2"
                   type="search"
                   placeholder="¿Qué estas buscando?"
                   aria-label="Search"
@@ -112,7 +112,7 @@ export default function App() {
                 <MDBNavbarLink
                   active
                   aria-current="page"
-                  href="/login"
+                  href="/accounts/Login"
                   className="text-light"
                 >
                   <img className="carrito" src={usuario} alt="usuario" />
