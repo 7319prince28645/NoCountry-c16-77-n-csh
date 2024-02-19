@@ -5,6 +5,8 @@ import fetchUserPractice from "../services/UserPractice";
 import CarrouselCards from "./sctruct/CarrouselCards";
 import CategoryCards from "./sctruct/CategoryCards";
 import Carrousel from "./sctruct/Carrousel";
+import datos from "../lib/datos";
+
 
 function Homee() {
   const [data, setData] = useState([]);
@@ -24,6 +26,7 @@ function Homee() {
   }, []);
   console.log(user);
   console.log(data);
+  console.log(datos);
   return (
     <>
     <Carrousel/>
