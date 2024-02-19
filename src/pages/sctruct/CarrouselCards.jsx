@@ -109,7 +109,7 @@ function CarrouselCards() {
                         <div className ="card m-2 border">
                             <img src={ima4} className ="card-img-top" alt="..." />
                             <div className ="card-body">
-                                <h5 className ="card-title">Card title</h5>
+                                <h5 className ="card-title">Batidora Electrolux Efficient HMA10</h5>
                                 <p className ="card-text"><small className ="text-body-secondary">Electrolux</small></p>
                             </div>
                         </div>

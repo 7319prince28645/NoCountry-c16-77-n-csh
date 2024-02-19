@@ -8,6 +8,7 @@ import PagesLogin from "./pages/accounts/PagesLogin";
 import Carrousel from "./pages/sctruct/Carrousel";
 import ProducTsCategory from "./pages/ProducTsCategory";
 import Productos from "./pages/Productos";
+import Login from "./pages/accounts/Login";
 
 function App() {
   const location = useLocation();
@@ -17,7 +18,7 @@ function App() {
     {pathname && <Navbar />}
       <Routes>
         <Route path="/" element={<Homee/>} />
-        
+        <Route path="/accounts/Login" element={<Login/>} />
         <Route path="/ProducTsCategory" element={<ProducTsCategory/>} />
         <Route path="/Product/:category/:id" element={<Productos/>} />
       </Routes>
