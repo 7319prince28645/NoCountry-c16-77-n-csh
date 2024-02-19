@@ -8,6 +8,7 @@ import PagesLogin from "./pages/accounts/PagesLogin";
 import Carrousel from "./pages/sctruct/Carrousel";
 import ProducTsCategory from "./pages/ProducTsCategory";
 import Productos from "./pages/Productos";
+
 function App() {
   const location = useLocation();
   const pathname = location.pathname !== "/login";
@@ -20,7 +21,7 @@ function App() {
         <Route path="/ProducTsCategory" element={<ProducTsCategory/>} />
         <Route path="/Product/:category/:id" element={<Productos/>} />
       </Routes>
-    {pathname && <Footer/>}
+    {pathname && <Footer />}
     
     </>
   );

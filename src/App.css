@@ -1,3 +1,7 @@
+html {
+    font-family: "Montserrat", sans-serif;
+}
+
 details {
     padding: .5rem;
     margin: .5rem;
