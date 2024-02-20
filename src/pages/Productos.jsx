@@ -2,25 +2,17 @@ import React from "react";
 import { useLocation, useParams } from "react-router-dom";
 import Datos from "../lib/datos";
 import { useState } from "react";
-import { data } from "autoprefixer";
 import '../pages/sctruct/CarrouselCards';
 import ima4 from '../assets/a34.webp';
-
+import { Link } from "react-router-dom";
 
 
 function Productos() {
   const [cargarMas,setCargarMas]= useState(7);
   const [dataFilter, setDataFilter] = useState([]);
-  const { id } = useParams();
-  const category = {
-    0: "Climatizacion",
-    1: "Celulares",
-    2: "Heladeras",
-    3: "Lavadoras",
-    4: "Notebooks",
-    5: "SmartTv",
-  };
-  const caterogy1 = Datos[category[id]];
+  const {pathname} = useLocation();
+  const path = pathname.split("/")[2];
+  const caterogy1 = Datos[path];
   const handleFilter = (e) => {
     let filter;
 
@@ -66,7 +58,7 @@ function Productos() {
       <article className="flex justify-between">
         <p>
           {" "}
-          <span>Todos los Productos</span> - <span>{category[id]}</span>
+          <span>Todos los Productos</span> - <span>{path}</span>
         </p>
         <span className="relative border-2 p-2">
           <p className="absolute -top-2 text-xs bg-white px-2">Ordenar Por</p>
@@ -86,9 +78,9 @@ function Productos() {
       </article>
       <main className="flex border-t pt-4 mt-2">
         <aside className="w-60 pr-8">
-          <p className="text-lg py-1">{category[id]}</p>
+          <p className="text-lg py-1">{path}</p>
           <p className="text-sm mb-4">
-            {dataFilter.length > 0 ? dataFilter.length : caterogy1.length}
+            {dataFilter?.length > 0 ? dataFilter?.length : caterogy1?.length}
             resultados/s
           </p>
           <span className="flex flex-col gap-2">
@@ -118,9 +110,9 @@ function Productos() {
         <article className="flex flex-col items-center">
           <div className="grid grid-cols-4 gap-4">
 
-            {(dataFilter.length > 0 ? dataFilter : caterogy1).slice(0,cargarMas).map(
+            {(dataFilter?.length > 0 ? dataFilter : caterogy1).slice(0,cargarMas).map(
               (value, index) => (
-                <div key={index} className="card">
+                <Link key={index} className="card" to={`/Product/${path}/${value.id}`}>
                   <img
                     src={ima4}
                     alt={value.descripcion}
@@ -137,7 +129,7 @@ function Productos() {
                     Samsung
                   </p>
 
-                </div>
+                </Link>
               )
             )}
 

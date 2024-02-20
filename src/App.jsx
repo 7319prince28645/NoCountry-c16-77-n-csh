@@ -4,11 +4,9 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from "./pages/sctruct/Navbar";
 import Homee from "./pages/Homee";
 import Footer from "./pages/sctruct/Footer";
-import PagesLogin from "./pages/accounts/PagesLogin";
-import Carrousel from "./pages/sctruct/Carrousel";
-import ProducTsCategory from "./pages/ProducTsCategory";
 import Productos from "./pages/Productos";
 import Login from "./pages/accounts/Login";
+import ProductsID from "./pages/ProductsID";
 
 function App() {
   const location = useLocation();
@@ -19,8 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Homee/>} />
         <Route path="/accounts/Login" element={<Login/>} />
-        <Route path="/ProducTsCategory" element={<ProducTsCategory/>} />
-        <Route path="/Product/:category/:id" element={<Productos/>} />
+        <Route path="/Product/:category" element={<Productos/>} />
+        <Route path="/Product/:category/:id" element={<ProductsID/>} />
       </Routes>
     {pathname && <Footer />}
     
