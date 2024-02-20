@@ -114,6 +114,21 @@ function CarrouselCards() {
                             </div>
                         </div>
                     </div>
+                    <style>
+                {`
+                    .carousel-control-prev-icon {
+                        background-color: #3e86d5;
+                      position: relative;
+                        left: -80px;
+                    }
+
+                    .carousel-control-next-icon {
+                        background-color: #3e86d5;
+                        position: relative;
+                        right: -80px;
+                    }
+                `}
+            </style>
                 </MDBCarouselItem>
             </MDBCarousel>
             </div>
