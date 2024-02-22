@@ -35,7 +35,7 @@ function Homee() {
       <Carrousel />
       <CategoryCards />
       <CarrouselCards />
-
+      
       <div className="grid grid-cols-2 gap-8 mx-8 ">
         <div className="hover:scale-110 hover:transition hover:duration-300">
           <Link >

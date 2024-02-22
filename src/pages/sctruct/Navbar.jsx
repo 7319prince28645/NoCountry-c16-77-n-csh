@@ -33,7 +33,7 @@ export default function App() {
   };
   return (
     <>
-      <div>
+      <div className="sticky z-20 top-0">
         <Modal isOpen={modalIsOpen} onClose={closeModal} />
         <MDBNavbar expand="lg" className="lg:px-10">
           <MDBContainer fluid>
@@ -52,7 +52,7 @@ export default function App() {
             <MDBCollapse navbar open={openBasic}>
               <MDBNavbarNav className="navbar grid grid-cols-1 gap-3 md:flex">
                 <div className="dropdown flex items-center px-0 text-sm xl:text-base hover:cursor-pointer">
-                  <span className="flex items-center gap-1 mt-2 uppercase">
+                  <span className="flex items-center gap-1 md:ml-2 xl:ml-10 mt-2 uppercase">
                     Categorias{" "}
                     <span>
                       <img src={abajo} className="w-1/2" alt="" />
