@@ -20,7 +20,8 @@ import abajo from "../../assets/down.png";
 import derecha from "../../assets/right.png";
 import { Link } from "react-router-dom";
 import { Button } from "bootstrap";
-export default function App() {
+import Carrito from "../modals/carrito";
+export default function App({ openModalCarrito}) {
   const [openBasic, setOpenBasic] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -31,9 +32,10 @@ export default function App() {
   const closeModal = () => {
     setModalIsOpen(false);
   };
+  
   return (
     <>
-      <div>
+      <div className="sticky z-20 top-0">
         <Modal isOpen={modalIsOpen} onClose={closeModal} />
         <MDBNavbar expand="lg" className="lg:px-10">
           <MDBContainer fluid>
@@ -52,7 +54,7 @@ export default function App() {
             <MDBCollapse navbar open={openBasic}>
               <MDBNavbarNav className="navbar grid grid-cols-1 gap-3 md:flex">
                 <div className="dropdown flex items-center px-0 text-sm xl:text-base hover:cursor-pointer">
-                  <span className="flex items-center gap-1 mt-2 uppercase">
+                  <span className="flex items-center gap-1 md:ml-2 xl:ml-10 mt-2 uppercase">
                     Categorias{" "}
                     <span>
                       <img src={abajo} className="w-1/2" alt="" />
@@ -218,11 +220,14 @@ export default function App() {
                   </MDBNavbarItem>
 
                   <MDBNavbarItem>
-                    <img className="carrito" src={favoritos} alt="favoritos" />
+                      <img className="carrito" src={favoritos} alt="favoritos" />
+                  
                   </MDBNavbarItem>
 
                   <MDBNavbarItem>
-                    <img className="carrito" src={carrito} alt="carrito" />
+                    <button onClick={openModalCarrito} className="text-light">
+                      <img className="carrito" src={carrito} alt="carrito" />
+                    </button>
                   </MDBNavbarItem>
                 </span>
               </MDBNavbarNav>

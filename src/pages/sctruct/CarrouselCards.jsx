@@ -15,7 +15,7 @@ function CarrouselCards() {
                 3 cuotas sin interés
             </h2>
         </div>
-        <div className='divContenedor w-[80%] m-auto overflow-x-hidden'>
+        <div className='divContenedor w-[80%] m-auto overflow-x-hidden bg-gray-200 '>
             <MDBCarousel showControls showIndicators className=''>
                 <MDBCarouselItem itemId={1} className='' >
                     <div className ="card-group d-flex gap-3 m-20">
@@ -114,6 +114,21 @@ function CarrouselCards() {
                             </div>
                         </div>
                     </div>
+                    <style>
+                {`
+                    .carousel-control-prev-icon {
+                        color: #3e86d5;
+                      position: relative;
+                        left: -80px;
+                    }
+
+                    .carousel-control-next-icon {
+                        color: #3e86d5;
+                        position: relative;
+                        right: -80px;
+                    }
+                `}
+            </style>
                 </MDBCarouselItem>
             </MDBCarousel>
             </div>

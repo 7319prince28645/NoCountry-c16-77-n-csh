@@ -14,6 +14,7 @@ function CategoryCards() {
         categoria,
         productos
     }));
+    
     console.log(productsArray)
     return (
 
@@ -24,7 +25,7 @@ function CategoryCards() {
             <div className='grid grid-cols-2 px-5 md:grid-cols-3 xl:grid-cols-6 mt-10 mb-20 gap-5'>
                 {productsArray.map((value, index) =>
                 (
-                    <Link to={`/Product/${value.categoria}/${index}`} key={index}>
+                    <Link to={`/Product/${value.categoria}`} key={index}>
                         <div key={index}>
                             <a href="#">
                                 <img src={aire} className='m-auto rounded-full shadow-md hover:scale-95 hover:shadow-2xl hover:transition hover:duration-500' alt="" />
