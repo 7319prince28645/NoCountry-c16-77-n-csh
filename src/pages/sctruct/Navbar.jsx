@@ -35,7 +35,8 @@ export default function App({ openModalCarrito}) {
   
   return (
     <>
-      <div>
+      <div className="sticky top-0 " >
+
         <Modal isOpen={modalIsOpen} onClose={closeModal} />
         <MDBNavbar expand="lg" className="lg:px-10">
           <MDBContainer fluid>
