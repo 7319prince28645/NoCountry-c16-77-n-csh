@@ -21,10 +21,13 @@ import derecha from "../../assets/right.png";
 import { Link } from "react-router-dom";
 import { Button } from "bootstrap";
 import Carrito from "../modals/carrito";
+import ModalUser from "../modals/modalUser";
+import { useNavigate } from "react-router-dom";
 export default function App({ openModalCarrito}) {
+  const loggedIn = localStorage.getItem("usuario") ? true : false;
+  const navigate = useNavigate();
   const [openBasic, setOpenBasic] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -32,16 +35,18 @@ export default function App({ openModalCarrito}) {
   const closeModal = () => {
     setModalIsOpen(false);
   };
-  
+  const handleUser = () => {
+    navigate("/accounts/dashboard");
+  };
   return (
     <>
       <div className="sticky z-20 top-0">
-        <Modal isOpen={modalIsOpen} onClose={closeModal} />
+        {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} />}
         <MDBNavbar expand="lg" className="lg:px-10">
           <MDBContainer fluid>
             <Link to={"/"}>
               <img id="logo" className="w-1/2" src={logo} alt="carrito" />
-              </Link>
+            </Link>
             <MDBNavbarToggler
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
@@ -214,14 +219,31 @@ export default function App({ openModalCarrito}) {
 
                 <span id="logitos" className="flex justify-center gap-3">
                   <MDBNavbarItem>
-                    <button onClick={openModal} className="text-light">
-                      <img className="carrito" src={usuario} alt="usuario" />
-                    </button>
+                    {loggedIn ? (
+                      <div className="flex gap-2">
+                        <p className="text-black">
+                          Hola {localStorage.getItem("name")}
+                        </p>
+                        <button
+                          className="text-black"
+                          onClick={handleUser}
+                        >
+                          <img
+                            className="carrito"
+                            src={usuario}
+                            alt="usuario"
+                          />
+                        </button>
+                      </div>
+                    ) : (
+                      <button onClick={openModal} className="text-black">
+                        <img className="carrito" src={usuario} alt="usuario" />
+                      </button>
+                    )}
                   </MDBNavbarItem>
 
                   <MDBNavbarItem>
-                      <img className="carrito" src={favoritos} alt="favoritos" />
-                  
+                    <img className="carrito" src={favoritos} alt="favoritos" />
                   </MDBNavbarItem>
 
                   <MDBNavbarItem>

@@ -8,9 +8,13 @@ import Productos from "./pages/Productos";
 import Login from "./pages/accounts/Login";
 import ProductsID from "./pages/ProductsID";
 import { useState } from "react";
+import ModalUser from "./pages/modals/modalUser";
+import AdmiRutas from "./pages/admi/AdmiRutas";
 
 function App() {
   const [modalIsOpenCarrito, setModalIsOpenCarrito] = useState(false);
+  const loggedIn = localStorage.getItem("usuario");
+  console.log(loggedIn);
   const openModalCarrito = () => {
     setModalIsOpenCarrito(true);
   };
@@ -18,17 +22,18 @@ function App() {
     setModalIsOpenCarrito(false);
   };
   const location = useLocation();
-  const pathname = location.pathname !== "/login";
+  const pathname2 = !location.pathname.startsWith("/accounts/dashboard");
   return (
     <div className="bg-[#F6F6F6]">
-    {pathname && <Navbar setModalIsOpenCarrito={setModalIsOpenCarrito} openModalCarrito={openModalCarrito}/>}
+    {pathname2 && <Navbar setModalIsOpenCarrito={setModalIsOpenCarrito} openModalCarrito={openModalCarrito} loggedIn={loggedIn}/>}
       <Routes>
         <Route path="/" element={<Homee/>} />
         <Route path="/accounts/Login" element={<Login/>} />
         <Route path="/Product/:category" element={<Productos/>} />
         <Route path="/Product/:category/:id" element={<ProductsID openModalCarrito={openModalCarrito} modalIsOpenCarrito={modalIsOpenCarrito} closeModalCarrito={closeModalCarrito}/>} />
+        {loggedIn && <Route path="/accounts/dashboard/*" element={<AdmiRutas/>} />}
       </Routes>
-    {pathname && <Footer />}
+    {pathname2 && <Footer />}
     
     </div>
   );

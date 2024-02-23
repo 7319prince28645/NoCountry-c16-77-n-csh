@@ -1,6 +1,18 @@
 import React from "react";
 
 function SignUp({ handClickState }) {
+
+  const handClicData = () => {
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  localStorage.setItem("name", name);
+  localStorage.setItem("email", email);
+  localStorage.setItem("password", password);
+  handClickState(0);  
+  };
   return (
     <>
       <p
@@ -56,6 +68,7 @@ function SignUp({ handClickState }) {
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
+          onClick={()=>handClicData()}
         >
           Registrarse
         </button>
