@@ -46,8 +46,8 @@
   
   .button:before, .button:after {
     animation: steam 20s linear infinite;
-    background: linear-gradient(45deg, #00cdfb, #0000ff, #ff002f,#ffae00, #1100ff, #fb0094, 
-          #0000ff, #00ff00,#ffff00, #ff0000);
+    background: linear-gradient(45deg, #00cdfb, #0000ff, #ff002f,#90be9d, #1100ff, #fb0094, 
+          #0000ff, #00c8ff,#ebeb7a, #ff0000);
     background-size: 400%;
     border-radius: 10px;
     content: '';

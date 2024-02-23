@@ -6,8 +6,8 @@ import CarrouselCards from "./sctruct/CarrouselCards";
 import CategoryCards from "./sctruct/CategoryCards";
 import Carrousel from "./sctruct/Carrousel";
 import datos from "../lib/datos";
-import fija1 from '../assets/fija1.png';
-import fija2 from '../assets/fija2.png';
+import fija1 from '../assets/compus.png';
+import fija2 from '../assets/oferta.png';
 
 import VerOfertas from "./sctruct/VerOfertas";
 import { Link } from "react-router-dom";
@@ -36,13 +36,13 @@ function Homee() {
       <CategoryCards />
       <CarrouselCards />
 
-      <div className="grid grid-cols-2 gap-8 mx-8 my-8">
-        <div className="hover:scale-110 hover:transition hover:duration-300">
+      <div className="grid grid-cols-2 gap-8 mx-8 my-20">
+        <div className="hover:scale-105 hover:transition hover:duration-300">
           <Link >
             <img src={fija1} alt="" />
           </Link>
         </div>
-        <div className="hover:scale-110 hover:transition hover:duration-300">
+        <div className="hover:scale-105 hover:transition hover:duration-300">
           <Link>
             <img src={fija2} alt="" />
           </Link>
