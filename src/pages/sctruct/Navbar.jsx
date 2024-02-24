@@ -23,6 +23,8 @@ import { Button } from "bootstrap";
 import Carrito from "../modals/carrito";
 import ModalUser from "../modals/modalUser";
 import { useNavigate } from "react-router-dom";
+import BarritaSup from "./BarritaSup";
+import BarritaInf from "./BarritaInf";
 export default function App({ openModalCarrito}) {
   const loggedIn = localStorage.getItem("usuario") ? true : false;
   const navigate = useNavigate();
@@ -40,7 +42,8 @@ export default function App({ openModalCarrito}) {
   };
   return (
     <>
-      <div className="sticky z-20 top-0">
+     <BarritaSup/>
+      <div className="sticky z-20 top-0 shadow-lg">
         {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} />}
         <MDBNavbar expand="lg" className="lg:px-10">
           <MDBContainer fluid>
@@ -202,7 +205,7 @@ export default function App({ openModalCarrito}) {
                   </div>
                 </div>
 
-                <span className="flex justify-center xl:justify-end">
+                <span className="flex justify-center xl:justify-end ">
                   <form className="flex w-2/3 md:w-1/3 lg:mr-10">
                     <input
                       className="text-sm xl:text-lg px-2"
@@ -257,6 +260,7 @@ export default function App({ openModalCarrito}) {
           </MDBContainer>
         </MDBNavbar>
       </div>
+      <BarritaInf/>
     </>
   );
 }
