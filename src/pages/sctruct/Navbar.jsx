@@ -12,12 +12,12 @@ import {
   MDBCollapse,
 } from "mdb-react-ui-kit";
 import "../sctruct/css/Navbar.css";
-import carrito from "../../assets/Carrito.png";
-import favoritos from "../../assets/favorito.png";
+import carrito from "../../assets/carrito-1.svg";
+import favoritos from "../../assets/favoritos.svg";
 import logo from "../../assets/logo-2.png";
-import usuario from "../../assets/usuario2.png";
-import abajo from "../../assets/down.png";
-import derecha from "../../assets/right.png";
+import usuario from "../../assets/user-2.svg";
+import abajo from "../../assets/abajo.webp";
+import derecha from "../../assets/derecha.webp";
 import { Link } from "react-router-dom";
 import { Button } from "bootstrap";
 import Carrito from "../modals/carrito";
@@ -42,7 +42,7 @@ export default function App({ openModalCarrito}) {
     <>
       <div className="sticky z-20 top-0">
         {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} />}
-        <MDBNavbar expand="lg" className="lg:px-10">
+        <MDBNavbar expand="lg" className="lg:px-10 lg:py-5">
           <MDBContainer fluid>
             <Link to={"/"}>
               <img id="logo" className="w-1/2" src={logo} alt="carrito" />
@@ -59,13 +59,13 @@ export default function App({ openModalCarrito}) {
             <MDBCollapse navbar open={openBasic}>
               <MDBNavbarNav className="navbar grid grid-cols-1 gap-3 md:flex">
                 <div className="dropdown flex items-center px-0 text-sm xl:text-base hover:cursor-pointer">
-                  <span className="flex items-center gap-1 md:ml-2 xl:ml-10 mt-2 uppercase">
+                  <span className="flex items-center gap-1 md:ml-2 lg:ml-10 mt-2 uppercase">
                     Categorias{" "}
                     <span>
                       <img src={abajo} className="w-1/2" alt="" />
                     </span>
                   </span>
-                  <div className="dropdown-content space-y-3 mt-3">
+                  <div className="dropdown-content rounded dropShadow space-y-3 mt-3 xl:ml-10">
                     <div className="dropdown">
                       <span className="flex justify-between items-center">
                         Tecnologia{" "}
@@ -77,7 +77,7 @@ export default function App({ openModalCarrito}) {
                           />
                         </span>
                       </span>
-                      <div className="dropdown-content space-y-3">
+                      <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
                           <span>Computadoras</span>
                         </div>
@@ -100,10 +100,7 @@ export default function App({ openModalCarrito}) {
                           />
                         </span>
                       </span>
-                      <div className="dropdown-content space-y-3">
-                        <div>
-                          <span>Accesorios</span>
-                        </div>
+                      <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
                           <span>Smart Tv</span>
                         </div>
@@ -126,7 +123,7 @@ export default function App({ openModalCarrito}) {
                           />
                         </span>
                       </span>
-                      <div className="dropdown-content space-y-3">
+                      <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
                           <span>Climatizacion</span>
                         </div>
@@ -135,9 +132,6 @@ export default function App({ openModalCarrito}) {
                         </div>
                         <div>
                           <span>Heladeras</span>
-                        </div>
-                        <div>
-                          <span>Limpieza</span>
                         </div>
                         <div>
                           <span>Lavado</span>
@@ -158,18 +152,12 @@ export default function App({ openModalCarrito}) {
                           />
                         </span>
                       </span>
-                      <div className="dropdown-content space-y-3">
+                      <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
                           <span>Baño</span>
                         </div>
                         <div>
-                          <span>Cocina</span>
-                        </div>
-                        <div>
                           <span>Decoracion</span>
-                        </div>
-                        <div>
-                          <span>Dormitorio</span>
                         </div>
                         <div>
                           <span>Iluminacion</span>
@@ -179,39 +167,19 @@ export default function App({ openModalCarrito}) {
                         </div>
                       </div>
                     </div>
-                    <div className="dropdown">
-                      <span className="flex justify-between gap-1 items-center">
-                        Belleza{" "}
-                        <span>
-                          <img
-                            src={derecha}
-                            className="w-1/2 items-center"
-                            alt=""
-                          />
-                        </span>
-                      </span>
-                      <div className="dropdown-content space-y-3">
-                        <div>
-                          <span>Cuidado Personal</span>
-                        </div>
-                        <div>
-                          <span>Salud y Bienestar</span>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
-                <span className="flex justify-center xl:justify-end">
-                  <form className="flex w-2/3 md:w-1/3 lg:mr-10">
+                <span className="flex justify-center md:right-10 lg:right-20 xl:justify-end md:relative xl:right-80">
+                  <form className="flex w-2/3 sm:w-1/2 md:w-1/3">
                     <input
-                      className="text-sm xl:text-lg px-2"
+                      className="text-sm xl:text-lg px-2 py-1"
                       type="search"
                       placeholder="¿Qué estas buscando?"
                       aria-label="Search"
                       id="buscador"
                     />
-                    <button className="bg-sky-600 px-3 rounded-r-md hover:bg-sky-500 text-white text-sm xl:text-lg">
+                    <button className="bg-[#CC444B] px-3 sombra rounded-r-md hover:bg-red-500 text-white text-sm xl:text-lg">
                       Buscar
                     </button>
                   </form>
@@ -225,6 +193,7 @@ export default function App({ openModalCarrito}) {
                           Hola {localStorage.getItem("name")}
                         </p>
                         <button
+                          title="Ingresar"
                           className="text-black"
                           onClick={handleUser}
                         >

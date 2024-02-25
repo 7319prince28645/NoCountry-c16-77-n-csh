@@ -15,17 +15,23 @@ input {
 }
 
 .navbar{
-    background-color: #f1faee;
+    background-color: #3E86D5;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-style: normal;
- 
+    color: #E5F1FA;
 }
 
 .carrito{
     width: 20px;
-    height: 20px;
-    
+    height: 20px; 
+}
+
+@media (min-width: 768px) {
+    .carrito {
+      width: 25px;
+    height: 25px; 
+    }
 }
 
 #logo{
@@ -48,7 +54,8 @@ input {
   width: 300px;
   border-top-left-radius: 6px; 
   border-bottom-left-radius: 6px;
-  background-color: #fdf0d5;
+  background-color: #e9f1fb;
+  box-shadow: 0 0 5px gray;
 }
 
 @media (min-width: 768px) {
@@ -74,7 +81,7 @@ form input:hover {
     display: none;
     position: absolute;
     top: 0.9rem;
-    background-color: #f9f9f9;
+    background-color: #3E86D5;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
@@ -101,4 +108,8 @@ form input:hover {
   
   .dropdown-content .dropdown:hover .dropdown-content {
     display: block; 
+  }
+
+  .sombra {
+    box-shadow: 0 0 5px #3786da;    
   }
