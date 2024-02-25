@@ -2,15 +2,19 @@ input {
     all: unset;
 }
 
-.barraInferior{
- background-color:#3e86d5;
- color: #fdf0d5;
- font-size: x-large;
- display: flex;
- justify-content: center;
- font-family: "Share Tech", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.barritaInf{  
+  text-shadow: 0px 3px 3px rgb(201, 201, 201);
+  font-size: xx-large;
+  
+ 
+}
+
+.barritaSup{
+  position: relative; 
+  z-index: 9999;
+  font-family: Economica;
+  font-size: x-large;
+  box-shadow: 0px 2px 8px rgb(156, 156, 156);
 
 }
 
