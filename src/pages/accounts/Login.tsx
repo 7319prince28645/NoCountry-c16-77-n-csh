@@ -48,7 +48,7 @@ function Login({ handClickState, onClose }) {
     }
     else {
     Swal.fire({
-      title: "Contrasenia incorrecta!",
+      title: "Contraseña incorrecta!",
       text: "Intente de nuevo o cree una cuenta nueva.",
       icon: "error",
       confirmButtonText: "¡Entendido!",
@@ -57,17 +57,18 @@ function Login({ handClickState, onClose }) {
   };
 
   return (
-    <div className="h-[100%] w-full px-8">
+    <div className="h-[100%] mb-12 w-full px-8 xl:mt-[13rem]">
       <span
         className="absolute top-1 right-2 text-gray-500 cursor-pointer z-40 p-2 font-semibold hover:text-neutral-300 text-xl"
         onClick={onClose}
       >
         ×
       </span>
-      <h2 className="text-2xl font-semibold p-2 border-b w-[98%] text-center">
+
+      <form className="space-y-4 rounded-lg shadow-2xl p-8 xl:h-[55%] 2xl:pt-10">
+      <h2 className="text-2xl font-semibold 2xl:py-5 text-center">
         Iniciar Sesion
       </h2>
-      <form className="space-y-4 rounded-lg shadow-lg h-[70%] p-8">
         <div>
           <label className="block text-sm font-medium text-gray-600">
             Email
@@ -100,7 +101,7 @@ function Login({ handClickState, onClose }) {
             className=" text-md text-center text-blue-500 hover:underline cursor-pointer"
             onClick={() => handClickState(2)}
           >
-            Olvido su contrasenia?
+            Olvido su contraseña?
           </p>
         </div>
         <button

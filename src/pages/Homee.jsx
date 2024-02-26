@@ -2,15 +2,17 @@ import React from "react";
 import { useState, useEffect } from "react";
 import useApiProducts from "../services/ApiProducts";
 import fetchUserPractice from "../services/UserPractice";
-import CarrouselCards from "./sctruct/CarrouselCards";
 import CategoryCards from "./sctruct/CategoryCards";
 import Carrousel from "./sctruct/Carrousel";
 import datos from "../lib/datos";
-import fija1 from '../assets/compus.png';
-import fija2 from '../assets/oferta.png';
-
+import fija1 from '../assets/banner-black-friday.webp';
+import fija2 from '../assets/banner-verano.webp';
 import VerOfertas from "./sctruct/VerOfertas";
 import { Link } from "react-router-dom";
+import Slider from "./sctruct/Slider";
+import Slider2 from "./sctruct/Slider2";
+import banner from '../assets/banner-audio.webp'
+import bannerSM from '../assets/banner-sm.webp'
 
 function Homee() {
   const [data, setData] = useState([]);
@@ -31,25 +33,30 @@ function Homee() {
 
   return (
     <>
-      <VerOfertas />
       <Carrousel />
       <CategoryCards />
-      <CarrouselCards />
-
-      <div className="grid grid-cols-2 gap-8 mx-8 my-20">
+      <Slider/>
+      <VerOfertas/>
+      <div className="grid md:grid-cols-2 gap-8 mx-8 md:my-20">
         <div className="hover:scale-105 hover:transition hover:duration-300">
           <Link >
-            <img src={fija1} alt="" />
+            <img src={fija1} className="shadow-2xl" alt="" />
           </Link>
         </div>
         <div className="hover:scale-105 hover:transition hover:duration-300">
           <Link>
-            <img src={fija2} alt="" />
+            <img src={fija2} className="shadow-2xl" alt="" />
           </Link>
         </div>
       </div >
-
-
+    <Slider2/>
+    <div className="my-10 mx-2 md:mx-8 md:my-20">
+      <a href="#">
+      <img src={bannerSM} className="lg:hidden sombra2 rounded-lg" alt="imagen banner auriculares" />
+      <img src={banner} className="hidden lg:flex sombra2 rounded-lg" alt="imagen banner auriculares" />
+      </a>
+    </div>
+      
     </>
   );
 }

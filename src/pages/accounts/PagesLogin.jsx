@@ -10,7 +10,7 @@ function PagesLogin({onClose}) {
     setState(e);
   };
   return (
-    <div className="flex-1 h-[70%] flex w-full">
+    <div className=" h-[100%] w-full">
       {state === 0 && <Login handClickState={handClickState} onClose={onClose}/>}
       {state === 1 && <SignUp handClickState={handClickState} />}
       {state === 2 && <Forgot handClickState={handClickState} />}
