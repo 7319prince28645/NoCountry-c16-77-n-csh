@@ -1,10 +1,7 @@
-
-
 import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
 import ima1 from '../../assets/banner-1.webp'
 import ima2 from '../../assets/banner-2.webp'
 import ima3 from '../../assets/banner-3.webp'
-import './css/carrousel.css'
 
 export default function Carrousel() {
   return (

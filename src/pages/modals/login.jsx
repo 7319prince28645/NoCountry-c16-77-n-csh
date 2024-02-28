@@ -4,7 +4,7 @@ import PagesLogin from "../accounts/PagesLogin";
 import { useEffect, useMemo } from "react";
 import imgLogin from "../../assets/loginimg-3.webp";
 import imgLogin2 from "../../assets/loginimg.webp";
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ isOpen, onClose, usserLog }) => {
   const modalAnimation = useSpring({
     left: isOpen ? "0%" : "-100%",
     opacity: isOpen ? 1 : 0,
@@ -38,7 +38,7 @@ const Modal = ({ isOpen, onClose, children }) => {
             <img src={imgLogin2} alt="" className="hidden sm:flex shadow-2xl xl:hidden w-full" />
           </div>
           <div className="">
-            <PagesLogin onClose={onClose} />
+            <PagesLogin onClose={onClose} usserLog={usserLog} />
           </div>
         </div>
       </div>

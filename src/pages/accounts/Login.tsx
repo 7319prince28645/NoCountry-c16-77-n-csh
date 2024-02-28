@@ -6,17 +6,10 @@ import SignUp from "./SignUp";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.css";
-function Login({ handClickState, onClose }) {
+function Login({ handClickState, onClose, usserLog }) {
   const navigate = useNavigate();
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-  const usuario = localStorage.getItem("usuario");
-  const email = localStorage.getItem("email");
-  const password = localStorage.getItem("password");
-
-  const handleClose = () => {
-    onClose();
-  };
   const handleData = (e, data) => {
     if (data === "email") {
       setEmail(e.target.value);
@@ -28,32 +21,23 @@ function Login({ handClickState, onClose }) {
 
   const handleClic = (e) => {
     e.preventDefault();
-    if (Email === email && Password === password) {
-      localStorage.setItem("usuario", "true");
-      Swal.fire({
-        title: "Bienvenido!",
-        text: "disfruta de tu estadia en nuestra pagina.",
-        icon: "success",
-        confirmButtonText: "¡Entendido!",
-      });
-      handleClose();
-    }
-    else if (Email === "" || Password === "") {
+
+    if (Email === "" || Password === "") {
       Swal.fire({
         title: "Datos incorrectos!",
         text: "Por favor llene todos los campos.",
         icon: "error",
         confirmButtonText: "¡Entendido!",
       });
+    } else {
+      Swal.fire({
+        title: "Contraseña incorrecta!",
+        text: "Intente de nuevo o cree una cuenta nueva.",
+        icon: "error",
+        confirmButtonText: "¡Entendido!",
+      });
     }
-    else {
-    Swal.fire({
-      title: "Contraseña incorrecta!",
-      text: "Intente de nuevo o cree una cuenta nueva.",
-      icon: "error",
-      confirmButtonText: "¡Entendido!",
-    });
-  }
+    usserLog(Email, Password);
   };
 
   return (
@@ -66,9 +50,9 @@ function Login({ handClickState, onClose }) {
       </span>
 
       <form className="space-y-4 rounded-lg shadow-2xl p-8 xl:h-[55%] 2xl:pt-10">
-      <h2 className="text-2xl font-semibold 2xl:py-5 text-center">
-        Iniciar Sesion
-      </h2>
+        <h2 className="text-2xl font-semibold 2xl:py-5 text-center">
+          Iniciar Sesion
+        </h2>
         <div>
           <label className="block text-sm font-medium text-gray-600">
             Email
