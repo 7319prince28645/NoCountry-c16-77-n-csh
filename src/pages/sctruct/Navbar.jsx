@@ -14,7 +14,6 @@ import {
 import "../sctruct/css/Navbar.css";
 import carrito from "../../assets/carrito-1.svg";
 import favoritos from "../../assets/favoritos.svg";
-import logo from "../../assets/logo-2.png";
 import usuario from "../../assets/user-2.svg";
 import abajo from "../../assets/abajo.webp";
 import derecha from "../../assets/derecha.webp";
@@ -23,7 +22,8 @@ import { Button } from "bootstrap";
 import Carrito from "../modals/carrito";
 import ModalUser from "../modals/modalUser";
 import { useNavigate } from "react-router-dom";
-import BarritaSup from "./BarritaSup";
+import logo from "../../assets/logo2.2.png";
+
 import BarritaInf from "./BarritaInf";
 export default function App({ openModalCarrito}) {
   const loggedIn = localStorage.getItem("usuario") ? true : false;
@@ -42,13 +42,13 @@ export default function App({ openModalCarrito}) {
   };
   return (
     <>
-     <BarritaSup/>
+     
       <div className="sticky z-20 top-0 shadow-lg">
         {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} />}
         <MDBNavbar expand="lg" className="lg:px-10 lg:py-5">
           <MDBContainer fluid>
             <Link to={"/"}>
-              <img id="logo" className="w-1/2" src={logo} alt="carrito" />
+              <img id="logo" className="w-1/4" src={logo} alt="carrito" />
             </Link>
             <MDBNavbarToggler
               aria-controls="navbarSupportedContent"
@@ -182,7 +182,7 @@ export default function App({ openModalCarrito}) {
                       aria-label="Search"
                       id="buscador"
                     />
-                    <button className="bg-[#CC444B] px-3 sombra rounded-r-md hover:bg-red-500 text-white text-sm xl:text-lg">
+                    <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
                       Buscar
                     </button>
                   </form>

@@ -5,7 +5,7 @@ import CarrouselCards from './CarrouselCards';
 function VerOfertas() {
   return (
     <div className="fixed bottom-10 left-10 z-50">
-    <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm font-bold  button">
+    <button className="bg-[#FFA62B] text-white px-4 py-2 rounded-md hover:bg-[#82C0CC] text-sm font-bold  button">
       Ver Ofertas
     </button>
   </div>

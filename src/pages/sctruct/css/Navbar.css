@@ -4,22 +4,15 @@ input {
 
 .barritaInf{  
   text-shadow: 0px 3px 3px rgb(201, 201, 201);
-  font-size: xx-large;
+  font-size: x-large;
   
  
 }
 
-.barritaSup{
-  position: relative; 
-  z-index: 9999;
-  font-family: Economica;
-  font-size: x-large;
-  box-shadow: 0px 2px 8px rgb(156, 156, 156);
 
-}
 
 .navbar{
-    background-color: #3E86D5;
+    background-color: #82C0CC;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -39,7 +32,7 @@ input {
 }
 
 #logo{
-    width: 100px;
+    width: 150px;
 }
 
 #lupa{

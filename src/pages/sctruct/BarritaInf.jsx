@@ -4,8 +4,8 @@ import "../sctruct/css/Navbar.css";
 function BarritaInf() {
   return (
     <div>
-      <p className=" bg-[#f1faee] font-semibold text-center text-[#6BA2DE] font-reboto barritaInf py-4" >
-      “Innovación para tu hogar, inspiración para tu jardín,<br /> todo en un solo lugar.”
+      <p className=" bg-[#f1faee] font-semibold text-center text-[#16697A] font-reboto barritaInf py-2" >
+       TODO EN UN SOLO LUGAR
       <br />
       </p>
       
