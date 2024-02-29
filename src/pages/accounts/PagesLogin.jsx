@@ -4,10 +4,12 @@ import { useState } from "react";
 import Forgot from "./Forgot";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import VerOfertas from "../sctruct/VerOfertas";
 
 
 function PagesLogin({onClose, usserLog}) {
   const [state, setState] = useState(0);
+
   const handClickState = (e) => {
     setState(e);
   };

@@ -58,7 +58,7 @@ function App() {
   }, []);
   console.log(users);
   const location = useLocation();
-  const pathname2 = !location.pathname.startsWith("/accounts/dashboard") && !location.pathname.startsWith("/accounts/user");
+  const pathname2 = !location.pathname.startsWith("/accounts/dashboard") ;
   console.log(pathname2);
   return (
     <div className="bg-[#F6F6F6]">

@@ -231,7 +231,25 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
                           />
                         </button>
                       </div>
-                    ) : 
+                    ) : loggedIn && !usuarioLoggeado.admin ? (
+                      <div className="flex gap-2">
+                        <p className="text-black">
+                          Hola {usuarioLoggeado.name}
+                        </p>
+                        <button
+                          title="Ingresar"
+                          className="text-black"
+                          onClick={handleUser}
+                        >
+                          <img
+                            className="carrito"                
+                            src={usuario}
+                            alt="usuario"
+                          />
+                        </button>
+                      </div>
+                    ) :
+                          
                      (
                       <button onClick={openModal} className="text-black">
                         <img className="carrito" src={usuario} alt="usuario" />
