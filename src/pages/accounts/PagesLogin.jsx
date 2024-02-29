@@ -5,6 +5,7 @@ import Forgot from "./Forgot";
 import SignUp from "./SignUp";
 import Login from "./Login";
 function PagesLogin({onClose, usserLog}) {
+function PagesLogin({onClose, usserLog}) {
   const [state, setState] = useState(0);
   const handClickState = (e) => {
     setState(e);

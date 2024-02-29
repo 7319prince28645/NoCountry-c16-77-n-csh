@@ -24,6 +24,8 @@ import ModalUser from "../modals/modalUser";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo2.2.png";
 
+import logo from "../../assets/logo2.2.png";
+
 import BarritaInf from "./BarritaInf";
 <<<<<<< HEAD
 
@@ -46,6 +48,7 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
     setModalIsOpen(false);
   };
   const handleUserAdmin = () => {
+  const handleUserAdmin = () => {
     navigate("/accounts/dashboard");
   };
 <<<<<<< HEAD
@@ -61,11 +64,14 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
   return (
     <>
      
+     
       <div className="sticky z-20 top-0 shadow-lg">
+        {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} usserLog={usserLog} />}
         {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} usserLog={usserLog} />}
         <MDBNavbar expand="lg" className="lg:px-10 lg:py-5">
           <MDBContainer fluid>
             <Link to={"/"}>
+              <img id="logo" className="w-1/4" src={logo} alt="carrito" />
               <img id="logo" className="w-1/4" src={logo} alt="carrito" />
             </Link>
             <MDBNavbarToggler
@@ -209,6 +215,7 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
                       id="buscador"
                     />
                     <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
+                    <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
                       Buscar
                     </button>
                   </form>
@@ -235,8 +242,28 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
                       </div>
                     ) : loggedIn && !usuarioLoggeado.admin ?
                     (
+                    {loggedIn && usuarioLoggeado.admin ? (
                       <div className="flex gap-2">
                         <p className="text-black">
+                          Hola {usuarioLoggeado.name}
+                        </p>
+                        <button
+                          title="Ingresar"
+                          className="text-black"
+                          onClick={handleUserAdmin}
+                        >
+                          <img
+                            className="carrito"                
+                            src={usuario}
+                            alt="usuario"
+                          />
+                        </button>
+                      </div>
+                    ) : loggedIn && !usuarioLoggeado.admin ?
+                    (
+                      <div className="flex gap-2">
+                        <p className="text-black">
+                          Hola no admin {usuarioLoggeado.name}
                           Hola no admin {usuarioLoggeado.name}
                         </p>
                         <button
@@ -251,6 +278,8 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
                           />
                         </button>
                       </div>
+                    )
+                    : (
                     )
                     : (
                       <button onClick={openModal} className="text-black">
