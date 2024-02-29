@@ -11,8 +11,8 @@ import VerOfertas from "./sctruct/VerOfertas";
 import { Link } from "react-router-dom";
 import Slider from "./sctruct/Slider";
 import Slider2 from "./sctruct/Slider2";
-import banner from '../assets/banner-audio.webp'
-import bannerSM from '../assets/banner-sm.webp'
+import bannerSM from '../assets/banner-tech-sm.webp'
+import bannerXL from '../assets/banner-tech-xl.webp'
 
 function Homee() {
   const [data, setData] = useState([]);
@@ -50,10 +50,10 @@ function Homee() {
         </div>
       </div >
     <Slider2/>
-    <div className="my-10 mx-2 md:mx-8 md:my-20">
+    <div className="items-center text-center my-10 mx-2 md:mx-8 md:my-20">
       <a href="#">
       <img src={bannerSM} className="lg:hidden sombra2 rounded-lg" alt="imagen banner auriculares" />
-      <img src={banner} className="hidden lg:flex sombra2 rounded-lg" alt="imagen banner auriculares" />
+      <img src={bannerXL} className="hidden lg:flex sombra2 rounded-lg w-full" alt="imagen banner auriculares" />
       </a>
     </div>
       

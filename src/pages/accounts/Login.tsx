@@ -57,9 +57,9 @@ function Login({ handClickState, onClose }) {
   };
 
   return (
-    <div className="h-[100%] mb-12 w-full px-8 xl:mt-[13rem]">
+    <div className="h-[100%] mb-12 w-full px-8">
       <span
-        className="absolute top-1 right-2 text-gray-500 cursor-pointer z-40 p-2 font-semibold hover:text-neutral-300 text-xl"
+        className="absolute top-10 right-2 text-gray-500 cursor-pointer z-40 p-2 font-semibold hover:text-neutral-300 text-xl"
         onClick={onClose}
       >
         ×

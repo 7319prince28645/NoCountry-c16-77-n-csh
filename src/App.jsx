@@ -10,6 +10,11 @@ import ProductsID from "./pages/ProductsID";
 import { useState } from "react";
 import ModalUser from "./pages/modals/modalUser";
 import AdmiRutas from "./pages/admi/AdmiRutas";
+import Privacidad from "./pages/sctruct/Privacidad";
+import Envios from "./pages/sctruct/Envios";
+import Form from "./pages/sctruct/Form";
+import Terminos from "./pages/sctruct/Terminos";
+
 
 function App() {
   const [modalIsOpenCarrito, setModalIsOpenCarrito] = useState(false);
@@ -32,6 +37,10 @@ function App() {
         <Route path="/Product/:category" element={<Productos/>} />
         <Route path="/Product/:category/:id" element={<ProductsID openModalCarrito={openModalCarrito} modalIsOpenCarrito={modalIsOpenCarrito} closeModalCarrito={closeModalCarrito}/>} />
         {loggedIn && <Route path="/accounts/dashboard/*" element={<AdmiRutas/>} />}
+        <Route path="/sctruct/privacidad" element={<Privacidad/>} />
+        <Route path="/sctruct/envios" element={<Envios/>} />
+        <Route path="/sctruct/formulario" element={<Form/>} />
+        <Route path="/sctruct/terminos" element={<Terminos/>} />
       </Routes>
     {pathname2 && <Footer />}
     

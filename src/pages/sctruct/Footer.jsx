@@ -57,36 +57,31 @@ function Footer() {
         </div>
         <div className="list-none my-5 hidden xl:grid">
           <h3 className="mb-3 text-[#C9C9C9] font-semibold text-lg">Institucionales</h3>
-          <div className="space-y-3">
+          <div className="space-y-3 text-lg">
+            <li>
+              <Link to={"/sctruct/privacidad"}>
+                Politica de Privacidad
+              </Link>
+            </li>
+            <li>
+              <Link to={"/sctruct/envios"}>
+                Politica de Envios
+              </Link>
+            </li>
+            <li>
+              <Link to={"/sctruct/formulario"}>
+                Boton de Arrepentimiento
+              </Link>
+            </li>
             <li>
               <a href="#">
                 Contacto Comercial
               </a>
             </li>
             <li>
-              <a href="#">
-                Politica de Privacidad
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Politica de Envios
-              </a>
-            </li>
-            <li>
-              <a href="#">
+              <Link to={"/sctruct/terminos"}>
                 Terminos y Condiciones
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Boton de Arrepentimiento
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Trabaja con Nosotros
-              </a>
+              </Link>
             </li>
           </div>
         </div>
@@ -98,7 +93,7 @@ function Footer() {
               <Link to={`/Product/${value.categoria}`} key={index}>
                 <div key={index}>
 
-                  <h2 className='text-left text-lg font-medium my-2'>{value.categoria}</h2>
+                  <li className='text-left text-lg my-2'>{value.categoria}</li>
 
                 </div>
               </Link>
@@ -108,13 +103,13 @@ function Footer() {
         </div>
         <div className="list-none my-5 xl:my-0 hidden xl:grid">
           <h3 className="mb-3 text-[#C9C9C9] font-semibold text-lg">Nuestros Sellers</h3>
-          <div className="space-y-3">
+          <div className="">
           {productsArray.map((value, index) =>
             (
               <Link to={`/Product/${value.categoria}`} key={index}>
                 <div key={index}>
 
-                  <h2 className='text-left text-lg font-medium my-2'>{value.categoria}</h2>
+                  <h2 className='text-left text-lg my-2'>{value.categoria}</h2>
 
                 </div>
               </Link>

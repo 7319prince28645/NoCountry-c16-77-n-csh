@@ -25,10 +25,13 @@ import ModalUser from "../modals/modalUser";
 import { useNavigate } from "react-router-dom";
 import BarritaSup from "./BarritaSup";
 import BarritaInf from "./BarritaInf";
+
 export default function App({ openModalCarrito}) {
   const loggedIn = localStorage.getItem("usuario") ? true : false;
   const navigate = useNavigate();
   const [openBasic, setOpenBasic] = useState(false);
+  const [isHomeIcon, setIsHomeIcon] = useState(true);
+  const [iconColor, setIconColor] = useState("white");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const openModal = () => {
     setModalIsOpen(true);
@@ -39,6 +42,10 @@ export default function App({ openModalCarrito}) {
   };
   const handleUser = () => {
     navigate("/accounts/dashboard");
+  };
+  const handleIconClick = () => {
+    setIsHomeIcon(!isHomeIcon);
+    setIconColor(isHomeIcon ? "white" : "white");
   };
   return (
     <>
@@ -55,8 +62,16 @@ export default function App({ openModalCarrito}) {
               aria-expanded="false"
               aria-label="Toggle navigation"
               onClick={() => setOpenBasic(!openBasic)}
+              style={{color: "white", border: "1px solid white"}}
             >
-              <MDBIcon icon="bars" fas />
+              
+            <MDBIcon
+              icon={isHomeIcon ? "bars" : "x"}
+              fas
+              onClick={handleIconClick}
+              style={{ color: iconColor }}
+            />
+            
             </MDBNavbarToggler>
 
             <MDBCollapse navbar open={openBasic}>

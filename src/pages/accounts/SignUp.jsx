@@ -15,14 +15,15 @@ function SignUp({ handClickState }) {
   };
   return (
     <>
+    <div>
       <p
         onClick={() => handClickState(0)}
-        className="absolute top-1 right-2 text-gray-500 cursor-pointer z-40 p-2 font-semibold hover:text-neutral-300"
+        className="absolute top-10 right-2 text-gray-500 cursor-pointer z-40 p-2 font-semibold hover:text-neutral-300"
       >
         Atrás
       </p>
-      <p className="text-2xl font-semibold absolute top-1 left-1 p-2 border-b w-[98%]">Regístrate</p>
-      <form className="space-y-4">
+      <form className="space-y-4 p-5 xl:flex xl:flex-col">
+        <p className="text-2xl font-semibold border-b w-[100%] mb-2">Regístrate</p>
         <div>
           <label
             htmlFor="name"
@@ -67,12 +68,13 @@ function SignUp({ handClickState }) {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
+          className="w-full bg-blue-500 mt-5 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
           onClick={()=>handClicData()}
         >
           Registrarse
         </button>
       </form>
+    </div>
     </>
   );
 }
