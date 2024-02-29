@@ -2,8 +2,14 @@ import React from "react";
 import { useSpring, animated, config } from "react-spring";
 import PagesLogin from "../accounts/PagesLogin";
 import { useEffect, useMemo } from "react";
+<<<<<<< HEAD
 import imgLogin from "../../assets/logo-2.2.webp";
 const Modal = ({ isOpen, onClose, children }) => {
+=======
+import imgLogin from "../../assets/loginimg-3.webp";
+import imgLogin2 from "../../assets/loginimg.webp";
+const Modal = ({ isOpen, onClose, usserLog }) => {
+>>>>>>> b2939c4051a3546cfdf587fb439a2da65090ea32
   const modalAnimation = useSpring({
     left: isOpen ? "0%" : "-100%",
     opacity: isOpen ? 1 : 0,
@@ -35,8 +41,13 @@ const Modal = ({ isOpen, onClose, children }) => {
           <div className="relative flex items-center justify-center px-8">
             <img src={imgLogin} alt="" className="w-3/4"/>
           </div>
+<<<<<<< HEAD
           <div>
             <PagesLogin onClose={onClose} />
+=======
+          <div className="">
+            <PagesLogin onClose={onClose} usserLog={usserLog} />
+>>>>>>> b2939c4051a3546cfdf587fb439a2da65090ea32
           </div>
         </div>
       </div>

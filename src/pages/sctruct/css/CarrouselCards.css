@@ -27,8 +27,8 @@
   }
   .button {
     align-items: center;
-    background: linear-gradient(0deg, #3e86d5, #272727);
-    background-color: red;
+    background: linear-gradient(0deg, #f89a16, #FFA62B);
+    background-color: rgb(231, 199, 16);
     border: none;
     border-radius: 10px;
     color: white;
@@ -46,8 +46,8 @@
   
   .button:before, .button:after {
     animation: steam 20s linear infinite;
-    background: linear-gradient(45deg, #00cdfb, #0000ff, #ff002f,#90be9d, #1100ff, #fb0094, 
-          #0000ff, #00c8ff,#ebeb7a, #ff0000);
+    background: linear-gradient(45deg, #16697A, #FFA62B, #489FB5,#489FB5, #82C0CC, #82C0CC, 
+          #f1e46a, #16697A,#FFA62B, #FFA62B);
     background-size: 400%;
     border-radius: 10px;
     content: '';

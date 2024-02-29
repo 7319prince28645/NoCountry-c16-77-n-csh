@@ -14,7 +14,6 @@ import {
 import "../sctruct/css/Navbar.css";
 import carrito from "../../assets/carrito-1.svg";
 import favoritos from "../../assets/favoritos.svg";
-import logo from "../../assets/logo-2.png";
 import usuario from "../../assets/user-2.svg";
 import abajo from "../../assets/abajo.webp";
 import derecha from "../../assets/derecha.webp";
@@ -23,11 +22,17 @@ import { Button } from "bootstrap";
 import Carrito from "../modals/carrito";
 import ModalUser from "../modals/modalUser";
 import { useNavigate } from "react-router-dom";
-import BarritaSup from "./BarritaSup";
+import logo from "../../assets/logo2.2.png";
+
 import BarritaInf from "./BarritaInf";
+<<<<<<< HEAD
 
 export default function App({ openModalCarrito}) {
   const loggedIn = localStorage.getItem("usuario") ? true : false;
+=======
+export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLoggeado}) {
+  console.log(usuarioLoggeado);
+>>>>>>> b2939c4051a3546cfdf587fb439a2da65090ea32
   const navigate = useNavigate();
   const [openBasic, setOpenBasic] = useState(false);
   const [isHomeIcon, setIsHomeIcon] = useState(true);
@@ -40,22 +45,28 @@ export default function App({ openModalCarrito}) {
   const closeModal = () => {
     setModalIsOpen(false);
   };
-  const handleUser = () => {
+  const handleUserAdmin = () => {
     navigate("/accounts/dashboard");
   };
+<<<<<<< HEAD
   const handleIconClick = () => {
     setIsHomeIcon(!isHomeIcon);
     setIconColor(isHomeIcon ? "white" : "white");
   };
+=======
+  const handleUser = () => {
+    navigate("/accounts/user");
+  }
+>>>>>>> b2939c4051a3546cfdf587fb439a2da65090ea32
   return (
     <>
-     <BarritaSup/>
+     
       <div className="sticky z-20 top-0 shadow-lg">
-        {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} />}
+        {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} usserLog={usserLog} />}
         <MDBNavbar expand="lg" className="lg:px-10 lg:py-5">
           <MDBContainer fluid>
             <Link to={"/"}>
-              <img id="logo" className="w-1/2" src={logo} alt="carrito" />
+              <img id="logo" className="w-1/4" src={logo} alt="carrito" />
             </Link>
             <MDBNavbarToggler
               aria-controls="navbarSupportedContent"
@@ -197,7 +208,7 @@ export default function App({ openModalCarrito}) {
                       aria-label="Search"
                       id="buscador"
                     />
-                    <button className="bg-[#CC444B] px-3 sombra rounded-r-md hover:bg-red-500 text-white text-sm xl:text-lg">
+                    <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
                       Buscar
                     </button>
                   </form>
@@ -205,10 +216,28 @@ export default function App({ openModalCarrito}) {
 
                 <span id="logitos" className="flex justify-center gap-3">
                   <MDBNavbarItem>
-                    {loggedIn ? (
+                    {loggedIn && usuarioLoggeado.admin ? (
                       <div className="flex gap-2">
                         <p className="text-black">
-                          Hola {localStorage.getItem("name")}
+                          Hola {usuarioLoggeado.name}
+                        </p>
+                        <button
+                          title="Ingresar"
+                          className="text-black"
+                          onClick={handleUserAdmin}
+                        >
+                          <img
+                            className="carrito"                
+                            src={usuario}
+                            alt="usuario"
+                          />
+                        </button>
+                      </div>
+                    ) : loggedIn && !usuarioLoggeado.admin ?
+                    (
+                      <div className="flex gap-2">
+                        <p className="text-black">
+                          Hola no admin {usuarioLoggeado.name}
                         </p>
                         <button
                           title="Ingresar"
@@ -222,7 +251,8 @@ export default function App({ openModalCarrito}) {
                           />
                         </button>
                       </div>
-                    ) : (
+                    )
+                    : (
                       <button onClick={openModal} className="text-black">
                         <img className="carrito" src={usuario} alt="usuario" />
                       </button>
