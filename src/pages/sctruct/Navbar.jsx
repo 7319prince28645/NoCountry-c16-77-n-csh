@@ -23,18 +23,12 @@ import Carrito from "../modals/carrito";
 import ModalUser from "../modals/modalUser";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo2.2.png";
-
-import logo from "../../assets/logo2.2.png";
-
 import BarritaInf from "./BarritaInf";
-<<<<<<< HEAD
 
-export default function App({ openModalCarrito}) {
-  const loggedIn = localStorage.getItem("usuario") ? true : false;
-=======
-export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLoggeado}) {
+
+export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLoggeado}) {
   console.log(usuarioLoggeado);
->>>>>>> b2939c4051a3546cfdf587fb439a2da65090ea32
+
   const navigate = useNavigate();
   const [openBasic, setOpenBasic] = useState(false);
   const [isHomeIcon, setIsHomeIcon] = useState(true);
@@ -47,31 +41,29 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
   const closeModal = () => {
     setModalIsOpen(false);
   };
-  const handleUserAdmin = () => {
+ 
   const handleUserAdmin = () => {
     navigate("/accounts/dashboard");
   };
-<<<<<<< HEAD
+
   const handleIconClick = () => {
     setIsHomeIcon(!isHomeIcon);
     setIconColor(isHomeIcon ? "white" : "white");
   };
-=======
+
   const handleUser = () => {
     navigate("/accounts/user");
   }
->>>>>>> b2939c4051a3546cfdf587fb439a2da65090ea32
+ 
   return (
     <>
      
      
       <div className="sticky z-20 top-0 shadow-lg">
         {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} usserLog={usserLog} />}
-        {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} usserLog={usserLog} />}
         <MDBNavbar expand="lg" className="lg:px-10 lg:py-5">
           <MDBContainer fluid>
             <Link to={"/"}>
-              <img id="logo" className="w-1/4" src={logo} alt="carrito" />
               <img id="logo" className="w-1/4" src={logo} alt="carrito" />
             </Link>
             <MDBNavbarToggler
@@ -205,7 +197,7 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
                   </div>
                 </div>
 
-                <span className="flex justify-center md:right-10 lg:right-20 xl:justify-end md:relative xl:right-80">
+                <span className="flex justify-center md:right-10 lg:right-20 xl:justify-end md:relative xl:right-[22.8rem]">
                   <form className="flex w-2/3 sm:w-1/2 md:w-1/3">
                     <input
                       className="text-sm xl:text-lg px-2 py-1"
@@ -214,7 +206,6 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
                       aria-label="Search"
                       id="buscador"
                     />
-                    <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
                     <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
                       Buscar
                     </button>
@@ -240,48 +231,8 @@ export default function App({ openModalCarrito, loggedIn, usserLog, usuarioLogge
                           />
                         </button>
                       </div>
-                    ) : loggedIn && !usuarioLoggeado.admin ?
-                    (
-                    {loggedIn && usuarioLoggeado.admin ? (
-                      <div className="flex gap-2">
-                        <p className="text-black">
-                          Hola {usuarioLoggeado.name}
-                        </p>
-                        <button
-                          title="Ingresar"
-                          className="text-black"
-                          onClick={handleUserAdmin}
-                        >
-                          <img
-                            className="carrito"                
-                            src={usuario}
-                            alt="usuario"
-                          />
-                        </button>
-                      </div>
-                    ) : loggedIn && !usuarioLoggeado.admin ?
-                    (
-                      <div className="flex gap-2">
-                        <p className="text-black">
-                          Hola no admin {usuarioLoggeado.name}
-                          Hola no admin {usuarioLoggeado.name}
-                        </p>
-                        <button
-                          title="Ingresar"
-                          className="text-black"
-                          onClick={handleUser}
-                        >
-                          <img
-                            className="carrito"
-                            src={usuario}
-                            alt="usuario"
-                          />
-                        </button>
-                      </div>
-                    )
-                    : (
-                    )
-                    : (
+                    ) : 
+                     (
                       <button onClick={openModal} className="text-black">
                         <img className="carrito" src={usuario} alt="usuario" />
                       </button>

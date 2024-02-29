@@ -14,7 +14,7 @@ function Footer() {
 
   return (
     <div className="text-white">
-      <div className="bg-[#2166ae] p-2">
+      <div className="bg-[#16697A] p-2">
         <form action="" method="post" className='text-center xl:items-center xl:space-y-0 xl:flex xl:justify-center xl:gap-3'>
           <label className='text-xl uppercase 2xl:px-5 2xl:m-a 2xl:text-2xl 2xl:uppercase font-bold'>
             Enterate de las mejores ofertas
@@ -25,7 +25,7 @@ function Footer() {
           </div>
         </form>
       </div>
-      <div className="pt-5 2xl:px-10 xl:grid xl:grid-cols-[2fr_1fr_1fr_1fr] bg-[#3E86D5]">
+      <div className="pt-5 2xl:px-10 xl:grid xl:grid-cols-[2fr_1fr_1fr_1fr] bg-[#82C0CC]">
         <div className='2xl:space-y-3'>
           <div className='p-2 2xl:mt-5'>
             <h2 className='text-xl 2xl:text-2xl'>
@@ -225,7 +225,7 @@ function Footer() {
           </details>
         </div>
       </div>
-      <div className="bg-[#2166ae] p-2">
+      <div className="bg-[#16697A] p-2">
         Copyright © {new Date().getFullYear()} Tech S.A
       </div>
     </div>
