@@ -258,10 +258,6 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
                   </MDBNavbarItem>
 
                   <MDBNavbarItem>
-                    <img className="carrito" src={favoritos} alt="favoritos" />
-                  </MDBNavbarItem>
-
-                  <MDBNavbarItem>
                     <button onClick={openModalCarrito} className="text-light">
                       <img className="carrito" src={carrito} alt="carrito" />
                     </button>
