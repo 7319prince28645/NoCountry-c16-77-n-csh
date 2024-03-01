@@ -1,8 +1,12 @@
 import {baseApi} from "../lib/BaseApi";
 
-export const getObtenerUser = async() =>{
+export const getObtenerUserAuthen = async(id,token) =>{
     try{
-        const response = await baseApi.get('api/Users')
+        const response = await baseApi.get(`api/Users/${id}`,{
+            headers:{
+                Authorization: `Bearer ${token}`
+            }
+        })
         return response.data;
     }
     catch(error){

@@ -22,21 +22,7 @@ function Login({ handClickState, onClose, usserLog }) {
   const handleClic = (e) => {
     e.preventDefault();
 
-    if (Email === "" || Password === "") {
-      Swal.fire({
-        title: "Datos incorrectos!",
-        text: "Por favor llene todos los campos.",
-        icon: "error",
-        confirmButtonText: "¡Entendido!",
-      });
-    } else {
-      Swal.fire({
-        title: "Contraseña incorrecta!",
-        text: "Intente de nuevo o cree una cuenta nueva.",
-        icon: "error",
-        confirmButtonText: "¡Entendido!",
-      });
-    }
+   
     usserLog(Email, Password);
   };
 

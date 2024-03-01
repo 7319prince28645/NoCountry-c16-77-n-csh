@@ -86,7 +86,7 @@ function Footer() {
           </div>
         </div>
         <div className="list-none my-5 xl:my-0 hidden xl:grid">
-          <h3 className="mb-3 text-[#C9C9C9] font-semibold text-lg">Marcas</h3>
+          <h3 className="mb-3 text-[#FFA62B] font-semibold text-lg">Marcas</h3>
           <div className="space-y-3">
             {productsArray.map((value, index) =>
             (
@@ -189,7 +189,7 @@ function Footer() {
             </div>
           </details>
           <details className='xl:hidden border-gray-50'>
-            <summary>Nuestros Sellers</summary>
+            <summary>Nuestros asdsadads</summary>
             <div className="space-y-3 list-none pt-3">
               <li>
                 <a href="#">

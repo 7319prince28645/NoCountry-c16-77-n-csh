@@ -214,10 +214,10 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
 
                 <span id="logitos" className="flex justify-center gap-3">
                   <MDBNavbarItem>
-                    {loggedIn && usuarioLoggeado.admin ? (
+                    {loggedIn && usuarioLoggeado?.admin ? (
                       <div className="flex gap-2">
                         <p className="text-black">
-                          Hola {usuarioLoggeado.name}
+                          Hola {usuarioLoggeado?.name}
                         </p>
                         <button
                           title="Ingresar"
@@ -231,10 +231,10 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
                           />
                         </button>
                       </div>
-                    ) : loggedIn && !usuarioLoggeado.admin ? (
+                    ) : loggedIn && !usuarioLoggeado?.admin ? (
                       <div className="flex gap-2">
                         <p className="text-black">
-                          Hola {usuarioLoggeado.name}
+                          Hola {usuarioLoggeado?.name}
                         </p>
                         <button
                           title="Ingresar"
