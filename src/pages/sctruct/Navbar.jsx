@@ -25,8 +25,12 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo2.2.png";
 import BarritaInf from "./BarritaInf";
 
-
-export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLoggeado}) {
+export default function Navbar({
+  openModalCarrito,
+  loggedIn,
+  usserLog,
+  usuarioLoggeado,
+}) {
   console.log(usuarioLoggeado);
 
   const navigate = useNavigate();
@@ -41,7 +45,7 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
   const closeModal = () => {
     setModalIsOpen(false);
   };
- 
+
   const handleUserAdmin = () => {
     navigate("/accounts/dashboard");
   };
@@ -53,14 +57,18 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
 
   const handleUser = () => {
     navigate("/accounts/user");
-  }
- 
+  };
+
   return (
     <>
-     
-     
       <div className="sticky z-20 top-0 shadow-lg">
-        {loggedIn === false && <Modal isOpen={modalIsOpen} onClose={closeModal} usserLog={usserLog} />}
+        {loggedIn === false && (
+          <Modal
+            isOpen={modalIsOpen}
+            onClose={closeModal}
+            usserLog={usserLog}
+          />
+        )}
         <MDBNavbar expand="lg" className="lg:px-10 lg:py-5">
           <MDBContainer fluid>
             <Link to={"/"}>
@@ -71,16 +79,14 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
               aria-expanded="false"
               aria-label="Toggle navigation"
               onClick={() => setOpenBasic(!openBasic)}
-              style={{color: "white", border: "1px solid white"}}
+              style={{ color: "white", border: "1px solid white" }}
             >
-              
-            <MDBIcon
-              icon={isHomeIcon ? "bars" : "x"}
-              fas
-              onClick={handleIconClick}
-              style={{ color: iconColor }}
-            />
-            
+              <MDBIcon
+                icon={isHomeIcon ? "bars" : "x"}
+                fas
+                onClick={handleIconClick}
+                style={{ color: iconColor }}
+              />
             </MDBNavbarToggler>
 
             <MDBCollapse navbar open={openBasic}>
@@ -198,14 +204,11 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
                 </div>
 
                 <span className="flex justify-center md:right-10 lg:right-20 xl:justify-end md:relative xl:right-[22.8rem]">
-                  <form className="flex w-2/3 sm:w-1/2 md:w-1/3">
-                    <input
-                      className="text-sm xl:text-lg px-2 py-1"
-                      type="search"
-                      placeholder="¿Qué estas buscando?"
-                      aria-label="Search"
-                      id="buscador"
-                    />
+                  <form  className="flex w-2/3 sm:w-1/2 md:w-1/3" >
+                    <label className="block">
+                      <input className=" rounded-l-lg text-sm xl:text-lg px-2 py-1 bg-[#EDE7E3] placeholder-[#16697A]  text-[#16697A]"
+                      placeholder="¿Qué estas buscando?" />
+                    </label>
                     <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
                       Buscar
                     </button>
@@ -225,7 +228,7 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
                           onClick={handleUserAdmin}
                         >
                           <img
-                            className="carrito"                
+                            className="carrito"
                             src={usuario}
                             alt="usuario"
                           />
@@ -242,15 +245,13 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
                           onClick={handleUser}
                         >
                           <img
-                            className="carrito"                
+                            className="carrito"
                             src={usuario}
                             alt="usuario"
                           />
                         </button>
                       </div>
-                    ) :
-                          
-                     (
+                    ) : (
                       <button onClick={openModal} className="text-black">
                         <img className="carrito" src={usuario} alt="usuario" />
                       </button>
@@ -268,7 +269,7 @@ export default function Navbar({ openModalCarrito, loggedIn, usserLog, usuarioLo
           </MDBContainer>
         </MDBNavbar>
       </div>
-      <BarritaInf/>
+      <BarritaInf />
     </>
   );
 }
