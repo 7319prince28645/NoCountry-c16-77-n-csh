@@ -20,7 +20,7 @@ function CategoryCards() {
 
         <>
             <div className='text-center text-3xl mt-10 mb-5 font-medium uppercase text-[#16697A]'>
-                <h2>Categorias mas visitadas</h2>
+                <h2 className='drop-shadow-lg' >Categorias mas visitadas</h2>
             </div>
             <div className='grid grid-cols-2 px-5 md:grid-cols-3 xl:grid-cols-6 mt-10 mb-20 gap-5'>
                 {productsArray.map((value, index) =>

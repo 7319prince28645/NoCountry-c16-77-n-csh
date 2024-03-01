@@ -36,6 +36,7 @@ function Footer() {
   };
 
   return (
+
     <div className="text-white">
 
       <div className="text-white">
@@ -57,16 +58,20 @@ function Footer() {
           }
         </div>
       </div>
+    
+      
 
       <div className="pt-5 2xl:px-10 xl:grid xl:grid-cols-[2fr_1fr_1fr_1fr] bg-[#82C0CC]">
-        <div className='2xl:space-y-3'>
+       
+        <div className='2xl:space-y-3 ms-20 mt-12'>
           <div className='p-2 2xl:mt-5'>
             <h2 className='text-xl 2xl:text-2xl text-[#16697a] font-bold'>
               Tech S.A
             </h2>
           </div>
-          <div className='p-2 2xl:space-y-3'>
-            <div className='flex items-center gap-2'>
+
+          <div className='space-x-4'>
+            <div className='flex items-center gap-2 ms-3'>
               <img src={whatsapp} alt="" className='w-4 2xl:w-5' />
               <p>+54 9 112323-4545</p>
             </div>
@@ -87,7 +92,9 @@ function Footer() {
               <p>tech</p>
             </div>
           </div>
+
         </div>
+        
         <div className="list-none my-5 hidden xl:grid">
           <h3 className="mb-3 text-[#16697a] font-bold text-lg">Institucionales</h3>
           <div className="space-y-3 text-lg">
@@ -258,7 +265,7 @@ function Footer() {
           </details>
         </div>
       </div>
-      <div className="bg-[#16697A] p-2">
+      <div className="bg-[#16697A] p-2 text-center ">
         Copyright   {new Date().getFullYear()} Tech S.A
       </div>
     </div>
