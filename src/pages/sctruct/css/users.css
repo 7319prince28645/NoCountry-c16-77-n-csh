@@ -1,0 +1,13 @@
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="email"]::placeholder {
+  color: black;
+}
+
+.active {
+  background-color: #EDE7E3;
+}
+
+.bg-li:hover {
+  background-color: #f0ebe8;
+}
