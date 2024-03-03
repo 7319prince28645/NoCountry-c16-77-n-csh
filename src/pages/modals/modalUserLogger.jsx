@@ -31,12 +31,12 @@ function ModalUserLogger() {
           <ul className="space-y-5">
             <li className={`bg-li py-3 pl-5 rounded-md ${selectedItemIndex === 0 ? 'active' : ''}`}>
               <a href="#" className="flex gap-4" onClick={() => handleLiClick(0) }>
-                <span><img src={user} alt="" /></span>Mi cuenta
+                <span><img src={user} alt="icono usuario" /></span>Mi cuenta
               </a>
             </li>
             <li className={`bg-li py-3 pl-5 rounded-md ${selectedItemIndex === 1 ? 'active' : ''}`}>
               <a href="#" className="flex gap-4" onClick={() => handleLiClick(1)}>
-                <span><img src={compras} alt="" /></span>Mis compras
+                <span><img src={compras} alt="icono compras" /></span>Mis compras
               </a>
             </li>
             <li className="bg-li py-3 pl-5">
@@ -45,7 +45,7 @@ function ModalUserLogger() {
           className="flex gap-4"
           onClick={handleCerrarSesion}
         >
-          <span><img src={cerrar} alt="" /></span>Cerrar sesión
+          <span><img src={cerrar} alt="icono cerrar sesion" /></span>Cerrar sesión
         </Link>
             </li>
           </ul>

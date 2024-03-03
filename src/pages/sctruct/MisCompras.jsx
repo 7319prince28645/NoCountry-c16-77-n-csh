@@ -8,7 +8,7 @@ function MisCompras() {
         </div>
         <div className="flex flex-col items-center justify-center h-[700px] text-center space-y-10">
             <div>
-                <img src={SinCompras} alt="" />
+                <img src={SinCompras} alt="icono sin compras" />
             </div>
             <div className="space-y-3">
                 <h2 className="text-xl xl:text-2xl">No realizaste ninguna compra</h2>
