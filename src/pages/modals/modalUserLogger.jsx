@@ -8,7 +8,7 @@ function ModalUserLogger() {
   };
   const navigate = useNavigate();
   const handleCerrarSesion = () => {
-    localStorage.removeItem("usuario");
+    localStorage.removeItem("user");
     window.location.href = "/";
   };
   return (

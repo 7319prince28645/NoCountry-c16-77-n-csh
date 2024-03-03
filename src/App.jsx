@@ -27,63 +27,94 @@ function App() {
   const [token, setToken] = useState("");
   const [usuarioLoggeado, setUsuarioLoggeado] = useState({});
   const usserLog = async (email1, contra) => {
-    try{
+    try {
+      if(email1 === "" || contra === ""){
+        Swal.fire({
+          icon: "warning",
+          title: "Oops...",
+          text: "Por favor digite el usuario o contrasenia!",
+        });
+        return;
+      }
+    
       const response = await getObtenerUser(email1, contra);
       localStorage.setItem("user", JSON.stringify(response));
-      setToken(jwtDecode(localStorage.getItem("user")));
-      console.log(token);
-      setLoggedIn(true);
-      Swal.fire({
-        icon: "success",
-        title: "Bienvenido",
-        text: "Ingreso exitoso",
-      });
-    }
-    catch(error){
+
+      if (response?.token) {
+        setToken(jwtDecode(response.token));
+        setLoggedIn(true);
+        getObtenerUsuario(jwtDecode(response.token));
+        
+        Swal.fire({
+          icon: "success",
+          title: "Bienvenido",
+          text: "Inicio de sesion exitoso!",
+        });
+        // Resto de tu código
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Contrasenia incorrecta!",
+        });
+        // Manejar la falta de token en la respuesta
+        console.error("Token no presente en la respuesta");
+      }
+    } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Usuario o contraseña incorrectos",
+        text: "Algo salio mal!",
       });
+      // Manejar el error al obtener el usuario
+      console.error("Error al obtener el usuario", error);
     }
   };
   const getObtenerUsuario = async (tokenPasar) => {
     try {
       const auto = JSON.parse(localStorage.getItem("user"));
-      const response = await getObtenerUserAuthen(tokenPasar.nameid, auto.token);
+      console.log(auto.token);
+      const response = await getObtenerUserAuthen(
+        tokenPasar?.nameid,
+        auto?.token
+      );
       setUsuarioLoggeado(response);
     } catch (error) {
+     
+      
       console.error("Error al obtener el usuario", error);
     }
   };
-  useEffect(() => {
-    getObtenerUsuario(token);
-  }, [token]);
 
   console.log(usuarioLoggeado);
   console.log(token);
-  
   const openModalCarrito = () => {
     setModalIsOpenCarrito(true);
   };
   const closeModalCarrito = () => {
     setModalIsOpenCarrito(false);
   };
-
   useEffect(() => {
-
-    if (localStorage.getItem("user")) {
-      setLoggedIn(true);
-      setToken(jwtDecode(localStorage.getItem("user")));
-      
+    try {
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+      if (storedUser.token) {
+        setLoggedIn(true);
+        const userId = jwtDecode(storedUser.token);
+        console.log(userId);
+        setToken(userId);
+        getObtenerUsuario(userId);
+       
+        // Resto de tu código
+      }
+    } catch (error) {
+      console.error("Error al decodificar el token", error);
     }
   }, []);
- 
   const location = useLocation();
   const pathname2 = !location.pathname.startsWith("/accounts/dashboard");
   return (
     <div className="bg-[#F6F6F6]">
-      {pathname2 && (
+     
         <Navbar
           setModalIsOpenCarrito={setModalIsOpenCarrito}
           openModalCarrito={openModalCarrito}
@@ -91,7 +122,7 @@ function App() {
           usserLog={usserLog}
           usuarioLoggeado={usuarioLoggeado}
         />
-      )}
+   
       <Routes>
         <Route path="/" element={<Homee />} />
         <Route path="/accounts/Login" element={<Login />} />
@@ -123,12 +154,12 @@ function App() {
             />
           }
         />
-        {loggedIn  && (
+        {loggedIn && usuarioLoggeado?.Admin && (
           <Route path="/accounts/dashboard/*" element={<AdmiRutas />} />
         )}
         {loggedIn && <Route path="/accounts/user/*" element={<UserRutas />} />}
       </Routes>
-      {pathname2 && <Footer />}
+      <Footer />
     </div>
   );
 }

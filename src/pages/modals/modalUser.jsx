@@ -12,7 +12,7 @@ import ProductosAdmi from "../admi/ProductosAdmi";
 import AdmiRutas from "../admi/AdmiRutas";
 import { useState } from "react";
 function ModalUser() {
-  const [clic, setClic] = useState("");
+  const [clic, setClic] = useState("home");
   const handleClick = (link) => {
     setClic(link);
   };
@@ -23,14 +23,8 @@ function ModalUser() {
   };
   return (
     <div className="w-52">
-      <h2
-        className="text-2xl font-bold cursor-pointer"
-        onClick={() => navigate("/")}
-      >
-        Admin Dashboard
-      </h2>
-      <nav className="py-4 text-center">
-        <ul className="flex flex-col gap-8 w-full">
+      <nav className="text-center">
+        <ul className="flex flex-col gap-2 w-full">
           <li className="w-full">
             <Link
               to={"/accounts/dashboard"}
@@ -39,11 +33,11 @@ function ModalUser() {
               <p
                 className={
                   clic === "home"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px-4 py-2 rounded-lg text-white shadow-md"
-                    : "hover:text-gray-300 w-full"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
-                Home
+                Dashboard
               </p>
             </Link>
           </li>
@@ -55,8 +49,8 @@ function ModalUser() {
               <p
                 className={
                   clic === "perfil"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px py-2 rounded-lg text-white shadow-md "
-                    : "hover:text-gray-300"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
                 Perfil
@@ -71,8 +65,8 @@ function ModalUser() {
               <p
                 className={
                   clic === "inventario"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px py-2 rounded-lg text-white shadow-md "
-                    : "hover:text-gray-300"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
                 {" "}
@@ -88,8 +82,8 @@ function ModalUser() {
               <p
                 className={
                   clic === "productos"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px py-2 rounded-lg text-white shadow-md "
-                    : "hover:text-gray-300"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
                 Productos
@@ -104,8 +98,8 @@ function ModalUser() {
               <p
                 className={
                   clic === "notifaciones"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px py-2 rounded-lg text-white shadow-md "
-                    : "hover:text-gray-300"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
                 Notifaciones
@@ -121,8 +115,8 @@ function ModalUser() {
               <p
                 className={
                   clic === "soporte"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px py-2 rounded-lg text-white shadow-md "
-                    : "hover:text-gray-300"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
                 Soporte
@@ -138,8 +132,8 @@ function ModalUser() {
               <p
                 className={
                   clic === "ayuda"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px py-2 rounded-lg text-white shadow-md "
-                    : "hover:text-gray-300"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
                 Ayuda{" "}
@@ -155,8 +149,8 @@ function ModalUser() {
               <p
                 className={
                   clic === "contacto"
-                    ? "bg-[#3E86D5] hover:text-gray-300 px py-2 rounded-lg text-white shadow-md "
-                    : "hover:text-gray-300"
+                    ? "bg-[#82C0CC] hover:text-gray-300 px-4 py-2  text-black shadow-md"
+                    : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
                 Contacto{" "}

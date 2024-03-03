@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
-function PerfilAdmi() {
+
+const PerfilAdmi = () => {
+
   return (
     <div>
-      <h1>PErfil</h1>
+     perfil
     </div>
-  )
-}
+  );
+};
 
-export default PerfilAdmi
+export default PerfilAdmi;
