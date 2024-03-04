@@ -23,7 +23,7 @@ function ModalUser() {
   };
   return (
     <div className="w-52">
-      <nav className="text-center">
+      <nav className="text-center w-52">
         <ul className="flex flex-col gap-2 w-full">
           <li className="w-full">
             <Link
@@ -53,7 +53,7 @@ function ModalUser() {
                     : "hover:text-gray-300 w-full px-4 py-2"
                 }
               >
-                Perfil
+                Crear Items
               </p>
             </Link>
           </li>
@@ -70,7 +70,7 @@ function ModalUser() {
                 }
               >
                 {" "}
-                Inventario
+                Editar Items
               </p>
             </Link>
           </li>
