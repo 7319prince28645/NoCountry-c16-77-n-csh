@@ -56,22 +56,6 @@ function ModalUserLogger() {
         
 
       </div>
-
-      <div className="w-52">
-        <h2 className="text-2xl font-bold cursor-pointer">
-          User Accounts
-        </h2>
-
-        <Link
-          to={"/accounts/dashboard/home"}
-          className={
-            clic === "home" ? "hover:text-gray-300" : "hover:text-gray-300"
-          }
-          onClick={handleCerrarSesion}
-        >
-          Cerrar sesión
-        </Link>
-      </div>
     </>
   );
 }

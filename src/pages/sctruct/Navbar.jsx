@@ -24,12 +24,13 @@ import ModalUser from "../modals/modalUser";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo2.2.png";
 import BarritaInf from "./BarritaInf";
+import Buscador from "./Buscador";
 
 export default function Navbar({
   openModalCarrito,
   loggedIn,
   usserLog,
-  usuarioLoggeado,
+  usuarioLoggeado, 
 }) {
   console.log(usuarioLoggeado);
 
@@ -90,9 +91,9 @@ export default function Navbar({
             </MDBNavbarToggler>
 
             <MDBCollapse navbar open={openBasic}>
-              <MDBNavbarNav className="navbar grid grid-cols-1 gap-3 md:flex">
-                <div className="dropdown flex items-center px-0 text-sm xl:text-base hover:cursor-pointer">
-                  <span className="flex items-center gap-1 md:ml-2 lg:ml-10 mt-2 uppercase">
+              <nav className="navbar flex flex-col lg:flex-row md:justify-between w-[100%] gap-3">
+                <div className="dropdown flex items-center relative right-36 sm:right-0 text-sm xl:text-base hover:cursor-pointer">
+                  <span className="flex items-center gap-1 md:ml-2 mt-2 uppercase">
                     Categorias{" "}
                     <span>
                       <img src={abajo} className="w-1/2" alt="" />
@@ -100,7 +101,7 @@ export default function Navbar({
                   </span>
                   <div className="dropdown-content rounded dropShadow space-y-3 mt-3 xl:ml-10">
                     <div className="dropdown">
-                      <span className="flex justify-between items-center">
+                      <span className="flex justify-between items-center hover:text-[#16697A]">
                         Tecnologia{" "}
                         <span>
                           <img
@@ -112,18 +113,18 @@ export default function Navbar({
                       </span>
                       <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
-                          <span>Computadoras</span>
+                          <span className="hover:text-[#16697A]">Computadoras</span>
                         </div>
                         <div>
-                          <span>Celulares</span>
+                          <span className="hover:text-[#16697A]">Celulares</span>
                         </div>
                         <div>
-                          <span>Tablets</span>
+                          <span className="hover:text-[#16697A]">Tablets</span>
                         </div>
                       </div>
                     </div>
                     <div className="dropdown">
-                      <span className="flex justify-between gap-1 items-center">
+                      <span className="flex justify-between gap-1 items-center hover:text-[#16697A]">
                         Tv y Audio{" "}
                         <span>
                           <img
@@ -135,18 +136,18 @@ export default function Navbar({
                       </span>
                       <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
-                          <span>Smart Tv</span>
+                          <span className="hover:text-[#16697A]">Smart Tv</span>
                         </div>
                         <div>
-                          <span>Audio</span>
+                          <span className="hover:text-[#16697A]">Audio</span>
                         </div>
                         <div>
-                          <span>Proyectores</span>
+                          <span className="hover:text-[#16697A]">Proyectores</span>
                         </div>
                       </div>
                     </div>
                     <div className="dropdown">
-                      <span className="flex justify-between gap-1 items-center">
+                      <span className="flex justify-between gap-1 items-center hover:text-[#16697A]">
                         Electrodomesticos{" "}
                         <span>
                           <img
@@ -158,24 +159,24 @@ export default function Navbar({
                       </span>
                       <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
-                          <span>Climatizacion</span>
+                          <span className="hover:text-[#16697A]">Climatizacion</span>
                         </div>
                         <div>
-                          <span>Cocinas</span>
+                          <span className="hover:text-[#16697A]">Cocinas</span>
                         </div>
                         <div>
-                          <span>Heladeras</span>
+                          <span className="hover:text-[#16697A]">Heladeras</span>
                         </div>
                         <div>
-                          <span>Lavado</span>
+                          <span className="hover:text-[#16697A]">Lavado</span>
                         </div>
                         <div>
-                          <span>Pequeños Electros</span>
+                          <span className="hover:text-[#16697A]">Pequeños Electros</span>
                         </div>
                       </div>
                     </div>
                     <div className="dropdown">
-                      <span className="flex justify-between gap-1 items-center">
+                      <span className="flex justify-between gap-1 items-center hover:text-[#16697A]">
                         Hogar y Jardin{" "}
                         <span>
                           <img
@@ -187,44 +188,34 @@ export default function Navbar({
                       </span>
                       <div className="dropdown-content rounded dropShadow space-y-3">
                         <div>
-                          <span>Baño</span>
+                          <span className="hover:text-[#16697A]">Baño</span>
                         </div>
                         <div>
-                          <span>Decoracion</span>
+                          <span className="hover:text-[#16697A]">Decoracion</span>
                         </div>
                         <div>
-                          <span>Iluminacion</span>
+                          <span className="hover:text-[#16697A]">Iluminacion</span>
                         </div>
                         <div>
-                          <span>Jardin Exterior</span>
+                          <span className="hover:text-[#16697A]">Jardin Exterior</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <span className="flex justify-center md:right-10 lg:right-20 xl:justify-end md:relative xl:right-[22.8rem]">
-                  <form  className="flex w-2/3 sm:w-1/2 md:w-1/3" >
-                    <label className="block">
-                      <input className=" rounded-l-lg text-sm xl:text-lg px-2 py-1 bg-[#EDE7E3] placeholder-[#16697A]  text-[#16697A]"
-                      placeholder="¿Qué estas buscando?" />
-                    </label>
-                    <button className="bg-[#FFA62B] px-3 sombra rounded-r-md hover:[#16697A] text-white text-sm xl:text-lg">
-                      Buscar
-                    </button>
-                  </form>
-                </span>
+                <Buscador />
 
-                <span id="logitos" className="flex justify-center gap-3">
-                  <MDBNavbarItem>
+                <div id="logitos" className="flex justify-center gap-3">
+                  <div>
                     {loggedIn && usuarioLoggeado?.admin ? (
                       <div className="flex gap-2">
-                        <p className="text-black">
+                        <p className="text-white uppercase">
                           Hola {usuarioLoggeado?.name}
                         </p>
                         <button
                           title="Ingresar"
-                          className="text-black"
+                          className="text-white font-medium"
                           onClick={handleUserAdmin}
                         >
                           <img
@@ -236,12 +227,12 @@ export default function Navbar({
                       </div>
                     ) : loggedIn && !usuarioLoggeado?.admin ? (
                       <div className="flex gap-2">
-                        <p className="text-black">
+                        <p className="text-white uppercase font-medium">
                           Hola {usuarioLoggeado?.name}
                         </p>
                         <button
                           title="Ingresar"
-                          className="text-black"
+                          className="text-white"
                           onClick={handleUser}
                         >
                           <img
@@ -256,15 +247,15 @@ export default function Navbar({
                         <img className="carrito" src={usuario} alt="usuario" />
                       </button>
                     )}
-                  </MDBNavbarItem>
+                  </div>
 
-                  <MDBNavbarItem>
+                  <div>
                     <button onClick={openModalCarrito} className="text-light">
                       <img className="carrito" src={carrito} alt="carrito" />
                     </button>
-                  </MDBNavbarItem>
-                </span>
-              </MDBNavbarNav>
+                  </div>
+                </div>
+              </nav>
             </MDBCollapse>
           </MDBContainer>
         </MDBNavbar>

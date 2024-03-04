@@ -56,7 +56,7 @@ function Productos() {
   console.log(caterogy1);
   return (
     <div className="py-3 px-24">
-      <article className="flex justify-between">
+      <article className="flex justify-between gap-3">
         <p>
           {" "}
           <span>Todos los Productos</span> - <span>{path}</span>
@@ -77,8 +77,9 @@ function Productos() {
           </select>
         </span>
       </article>
-      <main className="flex border-t pt-4 mt-2">
-        <aside className="w-60 pr-8">
+
+      <main className="grid border-t gap-5 pt-4 mt-2 md:grid-cols-[1fr_4fr]">
+        <aside className="xl:w-60 xl:pr-8 text-center">
           <p className="text-lg py-1">{path}</p>
           <p className="text-sm mb-4">
             {dataFilter?.length > 0 ? dataFilter?.length : caterogy1?.length}
@@ -108,7 +109,7 @@ function Productos() {
             )}
           </span>
         </aside>
-        <article className="flex flex-col items-center">
+        <article className="flex flex-col items-center mt-5 mb-10">
           <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
 
             {(dataFilter?.length > 0 ? dataFilter : caterogy1).slice(0,cargarMas).map(
@@ -117,7 +118,7 @@ function Productos() {
                   <img
                     src={ima4}
                     alt={value.descripcion}
-                    className="w-full h-48 object-cover mb-4 rounded-md"
+                    className="w-full object-cover mb-4 rounded-md"
                   />
                   <p className=" text-center  text-3xl text-red-700">
                     ${value.precios[1]}
@@ -136,7 +137,7 @@ function Productos() {
 
           </div>
 
-         {cargarMas!==21&& <button className="text-center rounded-3xl bg-black text-white p-2 px-4 "  onClick={()=>setCargarMas(cargarMas+7)}>
+         {cargarMas!==21&& <button className="text-center rounded-3xl bg-black text-white p-2 px-4 mt-5" onClick={()=>setCargarMas(cargarMas+7)}>
             Cargar mas productos
           </button>}
 

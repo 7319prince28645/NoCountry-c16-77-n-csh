@@ -106,7 +106,7 @@ function ProductsID({ modalIsOpenCarrito, closeModalCarrito, openModalCarrito })
               </span>
               <p>1 unidad disponible</p>
               <button
-                className="bg-[#3e86d5] w-full py-2 text-lg font-semibold text-white hover:bg-[#5498e0]"
+                className="bg-[#489FB5] w-full py-2 text-lg font-semibold text-white hover:bg-[#82C0CC]"
                 onClick={() => handleCarrito()}
               >
                 Comprar

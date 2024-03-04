@@ -3,14 +3,14 @@
 function Micuenta() {
   return (
     <>
-        <div className="mt-10 rounded-lg xl:mt-0">
+        <div className="my-10 rounded-lg xl:mt-0">
           <h2 className="pl-5 xl:pl-0 xl:text-xl font-semibold border-b-[1px]">Mi cuenta</h2>
 
           <div className="shadow-xl rounded-lg">
             <h2 className="pt-5 pl-5 border-b-[1px] xl:text-lg">
               Datos de contacto
             </h2>
-            <form className='grid xl:grid-cols-3 gap-5 mt-10 p-4'>
+            <form className='formulario grid xl:grid-cols-3 gap-5 mt-10 p-4'>
               <div>
                 <label htmlFor="name" className="block text-sm text-gray-500">
                   Nombre
@@ -81,7 +81,7 @@ function Micuenta() {
             <div className="flex justify-end p-3">
               <button
                 type="submit"
-                className="bg-[#FFA62b] text-white px-4 py-1 rounded hover:bg-[#ffaf3e] xl:w-1/6"
+                className="bg-[#FFA62b] text-white px-4 py-1 rounded-full hover:bg-[#ffaf3e] hover:transition hover:duration-500 xl:w-1/6"
               >
                 Guardar Cambios
               </button>
@@ -140,7 +140,7 @@ function Micuenta() {
               <div className="flex justify-end p-3">
               <button
                 type="submit"
-                className="bg-[#FFA62b] text-white px-4 py-1 rounded hover:bg-[#ffaf3e] xl:w-1/3"
+                className="bg-[#FFA62b] text-white px-4 py-1 rounded-full hover:bg-[#ffaf3e] hover:transition hover:duration-500 xl:w-1/3"
               >
                 Guardar Cambios
               </button>
