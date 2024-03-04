@@ -5,7 +5,7 @@ function Cart({ onClose, product }) {
   console.log(product);
   return (
     <>
-      <div className="flex flex-col mx-auto w-[90%]">
+      <div className="flex flex-col px-8 h-screen w-full">
       <span
         className="text-gray-500 text-end cursor-pointer z-40 p-2 font-semibold hover:text-neutral-300 text-xl"
         onClick={onClose}

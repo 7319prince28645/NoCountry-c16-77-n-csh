@@ -50,7 +50,7 @@ function Footer() {
                 </label>
                 <div>
                   <input type="email" placeholder={formSubmitted ? '' : 'Ingresa tu email'} className='my-3 sm:rounded-r-none sm:rounded-l-3xl text-[#7f7f7f] focus:outline-none text-left pl-1 pr-20 2xl:pr-28 py-1 bg-[#E5F1FA]' />
-                  <button type="submit" className='bg-[#ffa62B] py-1 px-2 2xl:px-5 uppercase font-semibold rounded-3xl sm:rounded-l-none xl:rounded-r-3xl hover:bg-[#C9C9C9] hover:transition hover:duration-500 hover:text-[#7f7f7f]'>
+                  <button type="submit" className='bg-[#ffa62B] py-1 px-2 2xl:px-5 uppercase font-semibold rounded-3xl rounded-l-none xl:rounded-r-3xl hover:bg-[#C9C9C9] hover:transition hover:duration-500 hover:text-[#7f7f7f]'>
                     Suscribite Ahora
                   </button>
                 </div>
@@ -63,15 +63,15 @@ function Footer() {
 
       <div className="pt-5 2xl:px-10 xl:grid xl:grid-cols-[2fr_1fr_1fr_1fr] bg-[#82C0CC]">
        
-        <div className='2xl:space-y-3 ms-20 mt-12'>
-          <div className='p-2 2xl:mt-5'>
+        <div className='mt-12 p-2'>
+          <div className='mb-4'>
             <h2 className='text-xl 2xl:text-2xl text-[#16697a] font-bold'>
               Tech S.A
             </h2>
           </div>
 
-          <div className='space-x-4'>
-            <div className='flex items-center gap-2 ms-3'>
+          <div className='space-y-4'>
+            <div className='flex items-center gap-2'>
               <img src={whatsapp} alt="" className='w-4 2xl:w-5' />
               <p>+54 9 112323-4545</p>
             </div>
@@ -160,113 +160,75 @@ function Footer() {
         <div className='space-y-3 py-5 divide-y'>
           <details className='xl:hidden border-gray-50'>
             <summary>Institucionales</summary>
-            <div className="space-y-3 list-none pt-3 ">
+            <div className="space-y-3 list-none pt-3">
               <li>
-                <a href="#">
-                  Contacto Comercial
-                </a>
+              <Link to={"/sctruct/privacidad"}>
+                Politica de Privacidad
+              </Link>
               </li>
               <li>
-                <a href="#">
-                  Politica de Privacidad
-                </a>
+              <Link to={"/sctruct/envios"}>
+                Politica de Envios
+              </Link>
               </li>
               <li>
-                <a href="#">
-                  Politica de Envios
-                </a>
+              <Link to={"/sctruct/formulario"}>
+                Boton de Arrepentimiento
+              </Link>
               </li>
               <li>
-                <a href="#">
-                  Terminos y Condiciones
-                </a>
-              </li>
+              <a href="#">
+                Contacto Comercial
+              </a>
+            </li>
               <li>
-                <a href="#">
-                  Boton de Arrepentimiento
-                </a>
+              <Link to={"/sctruct/terminos"}>
+                Terminos y Condiciones
+              </Link>
               </li>
-              <li>
-                <a href="#">
-                  Trabaja con Nosotros
-                </a>
-              </li>
+
             </div>
           </details>
           <details className='xl:hidden border-gray-50'>
             <summary>Marcas</summary>
-            <div className="space-y-3 list-none pt-3">
+            <div className='list-none'>
               <li>
-                <a href="#">
-                  Epson
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Peabody
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Acer
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Sony
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Black & Decker
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Samsung
-                </a>
+              {productsArray.map((value, index) =>
+            (
+              <Link to={`/Product/${value.categoria}`} key={index}>
+                <div key={index} className="space-y-3 list-none pt-3">
+
+                  <h2>{value.categoria}</h2>
+
+                </div>
+              </Link>
+            )
+            )}
               </li>
             </div>
           </details>
           <details className='xl:hidden border-gray-50'>
             <summary>Categorias</summary>
-            <div className="space-y-3 list-none pt-3">
+            <div className='list-none'>
               <li>
-                <a href="#">
-                  Argentina Color
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Dinatech
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Novatech
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Datasoft
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Delta
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Emood
-                </a>
+              {productsArray.map((value, index) =>
+            (
+              <Link to={`/Product/${value.categoria}`} key={index}>
+                <div key={index} className="space-y-3 list-none pt-3">
+
+                  <h2>{value.categoria}</h2>
+
+                </div>
+              </Link>
+            )
+            )}
               </li>
             </div>
           </details>
         </div>
       </div>
       <div className="bg-[#16697A] p-2 text-center ">
-        Copyright   {new Date().getFullYear()} Tech S.A
+        Copyright {new Date().getFullYear()} Tech S.A
       </div>
     </div>
   )

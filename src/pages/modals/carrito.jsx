@@ -25,11 +25,11 @@ function Carrito({ isOpen, onClose, product, ContadorCarrito }) {
   return (
     <animated.div
       style={modalAnimation}
-      className="absolute top-0 right-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none w-[45%] bg-white "
+      className="absolute -top-0 z-50 flex items-center justify-end overflow-x-hidden overflow-y-hidden outline-none focus:outline-none xl:w-[30%] bg-white "
     >
       <div className="fixed inset-0 bg-black opacity-60"></div>
-      <div className="relative h-full w-full">
-        <div className="relative flex flex-col h-screen bg-white   outline-none focus:outline-none">
+      <div className="relative h-screen w-full">
+        <div className="relative flex flex-col h-screen bg-white outline-none focus:outline-none">
          
           <div className="h-full flex p-8 w-full mt-8 gap-4">
             <Cart onClose={onClose} product={product}/>

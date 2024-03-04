@@ -61,17 +61,16 @@ input {
   }
 }
 
-form input:hover {
-    box-shadow: 0 0 5px gray;
-  }
-  
-  form input:focus {
-    box-shadow: 0 0 5px #3786da;
-  }
-
   .dropdown {
     position: relative;
     display: inline-block;
+    width: 120px;
+  }
+
+  @media (min-width: 768px) {
+    .dropdown {
+      width: 150px;
+    }
   }
   
   .dropdown-content {
@@ -82,7 +81,7 @@ form input:hover {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
-    width: 300px; 
+    width: 230px; 
   }
   
   .dropdown:hover .dropdown-content {

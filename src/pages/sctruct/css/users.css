@@ -1,6 +1,6 @@
-input[type="text"]::placeholder,
-input[type="tel"]::placeholder,
-input[type="email"]::placeholder {
+.formulario input[type="text"]::placeholder,
+.formulario input[type="tel"]::placeholder,
+.formulario input[type="email"]::placeholder {
   color: black;
 }
 

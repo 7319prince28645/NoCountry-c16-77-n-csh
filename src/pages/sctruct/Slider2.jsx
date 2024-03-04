@@ -1,14 +1,14 @@
-import Datos from "../../lib/datos";
+import datos from "../../lib/DatosBuscador";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "../../pages/sctruct/css/swiper.css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import ima4 from "../../assets/notebook-samsung.webp";
 import '../sctruct/css/CarrouselCards.css'
 
 function Slider2() {
+
+  const productosAleatorios = datos.sort(() => Math.random() - 0.5);
   return (
     <>
     <Swiper
@@ -40,13 +40,13 @@ function Slider2() {
       }}
       
     >
-      {Datos.Notebooks.map((Notebook, index) => (
-        <SwiperSlide key={index}>
+      {productosAleatorios.map((product) => (
+        <SwiperSlide key={product.id}>
           <div className="card space-y-5 hover:scale-95 hover:transition hover:duration-500">
-            <img src={ima4} alt={Notebook.descripcion} />
-            <h2>{Notebook.descripcion}</h2>
-            <p className="text-2xl font-medium">${Notebook.precios[0]}</p>
-            
+            <img src={product.img} alt={product.nombre} />
+            <h2>{product.nombre}</h2>
+            <h3>{product.modelo}</h3>
+            <p className="text-2xl font-medium">${product.precio}</p>
           </div>
         </SwiperSlide>
       ))}
