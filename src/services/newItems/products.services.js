@@ -22,7 +22,6 @@ export const postNewProduct = async (
         },
       }
     );
-
     return response.data;
   } catch (error) {
     console.error(error);

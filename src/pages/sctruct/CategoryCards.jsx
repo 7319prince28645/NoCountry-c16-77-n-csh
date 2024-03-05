@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import aire from '../../assets/aire.webp'
-import celulares from '../../assets/celulares.webp'
-import heladeras from '../../assets/heladeras.webp'
-import lavarropas from '../../assets/lavarropas.webp'
-import notebook from '../../assets/notebook.webp'
-import smart from '../../assets/smart.webp'
+import celulares1 from '../../assets/aire.webp'
+import celulares2 from '../../assets/celulares.webp'
+import celulares3 from '../../assets/heladeras.webp'
+import celulares4 from '../../assets/lavarropas.webp'
+import celulares5 from '../../assets/notebook.webp'
+import celulares6 from '../../assets/smart.webp'
 import datos from '../../lib/datos';
 import productos from '../../pages/Productos';
 
@@ -14,7 +14,17 @@ function CategoryCards() {
         categoria,
         productos
     }));
-    
+    const category = (id) => {
+        const category = {
+            1: celulares1,
+            2: celulares2,
+            3: celulares3,
+            4: celulares4,
+            5: celulares5,
+            6: celulares6
+        }
+        return category[id]
+    }
     console.log(productsArray)
     return (
 
@@ -28,7 +38,7 @@ function CategoryCards() {
                     <Link to={`/Product/${value.categoria}`} key={index}>
                         <div key={index}>
                             <a href="#">
-                                <img src={aire} className='m-auto rounded-full shadow-md hover:scale-95 hover:shadow-2xl hover:transition hover:duration-500' alt="" />
+                                <img src={category(index+1)} className='m-auto rounded-full shadow-md hover:scale-95 hover:shadow-2xl hover:transition hover:duration-500' alt="" />
                             </a>
                             <h2 className='text-center text-lg font-medium my-2'>{value.categoria}</h2>
 

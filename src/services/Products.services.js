@@ -1,16 +1,24 @@
 import { baseApi } from "../lib/BaseApi";
+import { getProductsID } from "./ProductsID.services";
 
 export const getProducts = async () => {
-    try {
-        const token = JSON.parse(localStorage.getItem('user'))
-        const response = await baseApi.get('api/products', {
-            headers: {
-                Authorization: `Bearer ${token?.token}`
-            }
+  try {
+    const token = JSON.parse(localStorage.getItem("user"));
+    const response = await baseApi.get("api/products", {
+      headers: {
+        Authorization: `Bearer ${token?.token}`,
+      },
+    });
+    if (response.data.products > 0) {
+      const products = await Promise.all(
+        response?.data.products.map(async (item) => {
+          const productIDData = await getProductsID(item?.id, token?.token);
+          return productIDData;
         })
-        return response.data
+      );
+      return products;
     }
-    catch (error) {
-        console.error(error)
-    }
-}
+  } catch (error) {
+    console.error(error);
+  }
+};

@@ -97,7 +97,7 @@ function App() {
   useEffect(() => {
     try {
       const storedUser = JSON.parse(localStorage.getItem("user"));
-      if (storedUser.token) {
+      if (storedUser?.token) {
         setLoggedIn(true);
         const userId = jwtDecode(storedUser.token);
         console.log(userId);
@@ -106,6 +106,7 @@ function App() {
        
         // Resto de tu código
       }
+      
     } catch (error) {
       console.error("Error al decodificar el token", error);
     }
@@ -145,7 +146,7 @@ function App() {
         <Route path="/sctruct/formulario" element={<Form />} />
         <Route path="/sctruct/terminos" element={<Terminos />} />
         <Route
-          path="/Product/:category/:id"
+          path="/Product/:Category/:id"
           element={
             <ProductsID
               openModalCarrito={openModalCarrito}
