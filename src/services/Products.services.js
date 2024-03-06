@@ -4,11 +4,7 @@ import { getProductsID } from "./ProductsID.services";
 export const getProducts = async () => {
   try {
     const token = JSON.parse(localStorage.getItem("user"));
-    const response = await baseApi.get("api/products", {
-      headers: {
-        Authorization: `Bearer ${token?.token}`,
-      },
-    });
+    const response = await baseApi.get("api/products");
     if (response.data.products) {
       const products = await Promise.all(
         response?.data.products.map(async (item) => {
