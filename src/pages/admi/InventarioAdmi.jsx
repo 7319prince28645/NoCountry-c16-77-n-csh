@@ -39,22 +39,7 @@ function InventarioAdmi() {
     getCategory();
     getProduct();
   }, []);
-  const categoryObtener = (category) => {
-    const categoria = {
-      1: "Climatización",
-      2: "Celulares",
-      3: "Smart TV",
-    };
-    return categoria[category];
-  };
-  const brandObtener = (brand) => {
-    const marca = {
-      1: "Apple",
-      2: "Samsung",
-      3: "Xiaomi",
-    };
-    return marca[brand];
-  };
+  
 
   console.log(product);
   console.log(category);
@@ -97,10 +82,10 @@ function InventarioAdmi() {
                   <td className="p-3  border-b">{item?.price}</td>
                   <td className="p-3  border-b">{item?.stock}</td>
                   <td className="p-3  border-b">
-                    {categoryObtener(item?.categoryId)}
+                    {category?.find((cat) => cat?.id === item?.categoryId)?.name}
                   </td>
                   <td className="p-3  border-b">
-                    {brandObtener(item?.brandId)}
+                    {brand?.find((br) => br?.id === item?.brandId)?.name}
                   </td>
                   <td className="p-3  border-b space-x-2">
                     <button className="text-blue-500 hover:underline">

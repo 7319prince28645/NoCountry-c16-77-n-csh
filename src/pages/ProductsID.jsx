@@ -16,6 +16,7 @@ function ProductsID({ modalIsOpenCarrito, closeModalCarrito, openModalCarrito })
   const [ContadorCarrito, setContadorCarrito] = useState(1);
   const [mandarCarrito, setMandarCarrito] = useState([]);
   const { id } = useParams();
+  console.log(id);
   const { pathname } = useLocation();
   const path = pathname.split("/")[2];
   const caterogy1 = Datos[path];

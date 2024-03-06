@@ -9,7 +9,7 @@ export const getProducts = async () => {
         Authorization: `Bearer ${token?.token}`,
       },
     });
-    if (response.data.products > 0) {
+    if (response.data.products) {
       const products = await Promise.all(
         response?.data.products.map(async (item) => {
           const productIDData = await getProductsID(item?.id, token?.token);

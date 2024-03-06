@@ -9,14 +9,15 @@ import { Link } from "react-router-dom";
 
 
 function Productos() {
+  const [products, setProducts] = useState([]);
   const [cargarMas,setCargarMas]= useState(7);
   const [dataFilter, setDataFilter] = useState([]);
   const {pathname} = useLocation();
   const path = pathname.split("/")[2];
+
   const caterogy1 = Datos[path];
   const handleFilter = (e) => {
     let filter;
-
     if (e === "conCuotas") {
       filter = caterogy1.filter((item) => item.cuotas !== "no");
     } else if (e === "sinCuotas") {
