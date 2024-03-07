@@ -2,12 +2,7 @@ import {baseApi} from "../lib/BaseApi";
 
 export const BrandService= async () => {
     try{
-        const token = JSON.parse(localStorage.getItem('user'))
-        const response = await baseApi.get('api/brand', {
-            headers: {
-                Authorization: `Bearer ${token?.token}`
-            }
-        })
+        const response = await baseApi.get('api/brand')
         return response.data
     }
     catch (error) {
