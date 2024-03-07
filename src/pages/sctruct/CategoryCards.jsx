@@ -46,7 +46,7 @@ function CategoryCards() {
       </div>
       <div className="grid grid-cols-2 px-5 md:grid-cols-3 xl:grid-cols-6 mt-10 mb-20 gap-5">
         {indiceMapear.map((value, index) => (
-          <Link to={`/Product/${categorias[value-1]?.name}?`} key={index}>
+          <Link to={`/Product/${categorias[value-1]?.name}`} key={index}>
             <div key={index}>
               <img
                 src={category(index + 1)}

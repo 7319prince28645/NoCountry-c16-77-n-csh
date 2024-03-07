@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "../modals/login";
 import {
   MDBContainer,
@@ -25,20 +25,34 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo2.2.png";
 import BarritaInf from "./BarritaInf";
 import Buscador from "./Buscador";
-
+import { CategoryService } from "../../services/Cateogory.services";
 export default function Navbar({
   openModalCarrito,
   loggedIn,
   usserLog,
-  usuarioLoggeado, 
+  usuarioLoggeado,
 }) {
   console.log(usuarioLoggeado);
 
   const navigate = useNavigate();
+  const [category, setCategory] = useState();
   const [openBasic, setOpenBasic] = useState(false);
   const [isHomeIcon, setIsHomeIcon] = useState(true);
   const [iconColor, setIconColor] = useState("white");
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const getCategory = async () => {
+    try {
+      const response = await CategoryService();
+      setCategory(response);
+      console.log(response);
+    } catch (error) {
+      console.error("Error al obtener categoría:", error);
+    }
+  };
+  useEffect(() => {
+    getCategory();
+  }, []);
+
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -63,6 +77,7 @@ export default function Navbar({
   return (
     <>
       <div className="sticky z-20 top-0 shadow-lg">
+        
         {loggedIn === false && (
           <Modal
             isOpen={modalIsOpen}
@@ -70,7 +85,16 @@ export default function Navbar({
             usserLog={usserLog}
           />
         )}
-        <MDBNavbar expand="lg" className="lg:px-10 lg:py-5">
+        <MDBNavbar expand="lg" className="lg:px-10 lg:pt-4 lg:pb-12 relative">
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center gap-4 p-2 bg-[#16697a81] ">
+          {category?.map((item, index) => (
+            <Link to={`/Product/${item.name}`} key={index}>
+            <div key={index} className="flex gap-2 hover:text-[#9eff78] cursor-pointer font-semibold">
+              <p className="">{item.name}</p>
+            </div>
+          </Link>
+          ))}
+        </div>
           <MDBContainer fluid>
             <Link to={"/"}>
               <img id="logo" className="w-1/4" src={logo} alt="carrito" />
@@ -90,119 +114,9 @@ export default function Navbar({
               />
             </MDBNavbarToggler>
 
-            <MDBCollapse navbar open={openBasic}>
-              <nav className="navbar flex flex-col lg:flex-row md:justify-between w-[100%] gap-3">
-                <div className="dropdown flex items-center relative right-36 sm:right-0 text-sm xl:text-base hover:cursor-pointer">
-                  <span className="flex items-center gap-1 md:ml-2 mt-2 uppercase">
-                    Categorias{" "}
-                    <span>
-                      <img src={abajo} className="w-1/2" alt="" />
-                    </span>
-                  </span>
-                  <div className="dropdown-content rounded dropShadow space-y-3 mt-3 xl:ml-10">
-                    <div className="dropdown">
-                      <span className="flex justify-between items-center hover:text-[#16697A]">
-                        Tecnologia{" "}
-                        <span>
-                          <img
-                            src={derecha}
-                            className="w-1/2 items-center"
-                            alt=""
-                          />
-                        </span>
-                      </span>
-                      <div className="dropdown-content rounded dropShadow space-y-3">
-                        <div>
-                          <span className="hover:text-[#16697A]">Computadoras</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Celulares</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Tablets</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="dropdown">
-                      <span className="flex justify-between gap-1 items-center hover:text-[#16697A]">
-                        Tv y Audio{" "}
-                        <span>
-                          <img
-                            src={derecha}
-                            className="w-1/2 items-center"
-                            alt=""
-                          />
-                        </span>
-                      </span>
-                      <div className="dropdown-content rounded dropShadow space-y-3">
-                        <div>
-                          <span className="hover:text-[#16697A]">Smart Tv</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Audio</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Proyectores</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="dropdown">
-                      <span className="flex justify-between gap-1 items-center hover:text-[#16697A]">
-                        Electrodomesticos{" "}
-                        <span>
-                          <img
-                            src={derecha}
-                            className="w-1/2 items-center"
-                            alt=""
-                          />
-                        </span>
-                      </span>
-                      <div className="dropdown-content rounded dropShadow space-y-3">
-                        <div>
-                          <span className="hover:text-[#16697A]">Climatizacion</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Cocinas</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Heladeras</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Lavado</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Pequeños Electros</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="dropdown">
-                      <span className="flex justify-between gap-1 items-center hover:text-[#16697A]">
-                        Hogar y Jardin{" "}
-                        <span>
-                          <img
-                            src={derecha}
-                            className="w-1/2 items-center"
-                            alt=""
-                          />
-                        </span>
-                      </span>
-                      <div className="dropdown-content rounded dropShadow space-y-3">
-                        <div>
-                          <span className="hover:text-[#16697A]">Baño</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Decoracion</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Iluminacion</span>
-                        </div>
-                        <div>
-                          <span className="hover:text-[#16697A]">Jardin Exterior</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <MDBCollapse navbar open={openBasic} className="relative">
+              <nav className="navbar flex flex-col lg:flex-row md:justify-between w-[100%] gap-3 relative">
+                <div className=""></div>
 
                 <Buscador />
 
@@ -260,6 +174,7 @@ export default function Navbar({
           </MDBContainer>
         </MDBNavbar>
       </div>
+
       <BarritaInf />
     </>
   );
