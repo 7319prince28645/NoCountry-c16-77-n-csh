@@ -22,7 +22,7 @@ function Forgot({ handClickState }) {
         />
         <button
           type="submit"
-          className="bg-blue-500 mt-5 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300"
+          className="bg-[#82C0CC] mt-5 text-white py-2 rounded-md hover:bg-[#16697a] hover:transition hover:duration-300 focus:outline-none focus:ring focus:border-blue-300"
         >
           Recuperar
         </button>

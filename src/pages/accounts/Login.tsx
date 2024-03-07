@@ -76,7 +76,7 @@ function Login({ handClickState, onClose, usserLog }) {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+          className="w-full bg-[#82C0CC] text-white py-2 rounded-md hover:bg-[#16697a] hover:transition hover:duration-300 focus:outline-none focus:ring focus:border-blue-300"
           onClick={(e) => handleClic(e)}
         >
           Iniciar Sesion
