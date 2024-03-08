@@ -7,6 +7,7 @@ const productos = [
       modelo: 'S400',
       precio: 400000,
       categoria: 'electrodomesticos',
+      stock: 3,
       img: '/heladera-samsung.webp'
     },
     {
@@ -16,6 +17,7 @@ const productos = [
       modelo: 'P400',
       precio: 390000,
       categoria: 'electrodomesticos',
+      stock: 6,
       img: '/heladera-patrick.webp'
     },
     {
@@ -25,6 +27,7 @@ const productos = [
       modelo: 'G400',
       precio: 350000,
       categoria: 'electrodomesticos',
+      stock: 2,
       img: '/heladera-gafa.webp'
     },
     {
@@ -34,6 +37,7 @@ const productos = [
         modelo: 'Galaxy S23',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 15,
         img: '/samsung-s23.webp'
       },
       {
@@ -43,6 +47,7 @@ const productos = [
         modelo: 'Moto Edge 30',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 12,
         img: '/moto-edge.webp'
       },
       {
@@ -52,6 +57,7 @@ const productos = [
         modelo: 'Redmi 10',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 10,
         img: '/xiaomi-redmi.webp'
       },
       {
@@ -61,6 +67,7 @@ const productos = [
         modelo: 'V 15',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 8,
         img: '/v15.webp'
       },
       {
@@ -70,6 +77,7 @@ const productos = [
         modelo: 'MacBook Pro',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 8,
         img: '/macbook.webp'
       },
       {
@@ -79,6 +87,7 @@ const productos = [
         modelo: 'Predator Helios',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 1,
         img: '/predator.webp'
       },
       {
@@ -88,6 +97,7 @@ const productos = [
         modelo: 'S7',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 1,
         img: '/tablet-samsung.webp'
       },
       {
@@ -97,6 +107,7 @@ const productos = [
         modelo: 'P11',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 1,
         img: '/tablet-lenovo.webp'
       },
       {
@@ -106,6 +117,7 @@ const productos = [
         modelo: 'Pad',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 1,
         img: '/tablet-xiaomi.webp'
       },
       {
@@ -115,6 +127,7 @@ const productos = [
         modelo: 'CDG-200',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 4,
         img: '/cocina-domec.webp'
       },
       {
@@ -124,6 +137,7 @@ const productos = [
         modelo: 'CMG-2250',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 2,
         img: '/cocina-mabe.webp'
       },
       {
@@ -133,6 +147,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 2,
         img: '/cocina-whirlpool.webp'
       },
       {
@@ -142,6 +157,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 20,
         img: '/tv-samsung.webp'
       },
       {
@@ -151,6 +167,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 20,
         img: '/tv-xiaomi.webp'
       },
       {
@@ -160,6 +177,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 20,
         img: '/tv-bgh.webp'
       },
       {
@@ -169,6 +187,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 2,
         img: '/parlante-jbl.webp'
       },
       {
@@ -178,6 +197,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 2,
         img: '/parlante-philco.webp'
       },
       {
@@ -187,6 +207,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 3,
         img: '/parlante-philips.webp'
       },
       {
@@ -196,6 +217,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 1,
         img: '/lavarropas-longvie.webp'
       },
       {
@@ -205,6 +227,7 @@ const productos = [
         modelo: 'CWG-0012',
         precio: 350000,
         categoria: 'tecnologia',
+        stock: 1,
         img: '/lavarropas-samsung.webp'
       },
     

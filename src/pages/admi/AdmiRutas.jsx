@@ -12,7 +12,7 @@ import ModalUser from "../modals/modalUser";
 
 function AdmiRutas() {
   return (
-    <div className="flex h-screen p-8 bg-[#F6F6F6] gap-4 w-full">
+    <div className="flex p-8 bg-[#F6F6F6] gap-4 w-full">
       {" "}
       <ModalUser />
       <Routes>
