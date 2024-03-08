@@ -9,10 +9,12 @@ import { CategoryService } from "../services/Cateogory.services";
 import { getProductsxCategory } from "../services/ProductsCategory";
 import { getProducts } from "../services/Products.services";
 import { BrandService } from "../services/Brand.services";
+import { getProductsxBrandww } from "../services/ProductsxBrand";
 
 function Productos() {
   const [productsAll, setProductsAll] = useState([]);
   const [marcasProductos, setMarcasProductos] = useState([]);
+  const [brand, setBrand] = useState([]);
   const [cargarMas, setCargarMas] = useState(7);
   const [dataFilter, setDataFilter] = useState([]);
   const [categoria, setCategoria] = useState();
@@ -32,7 +34,6 @@ function Productos() {
         };
       });
       setMarcasProductos(brandsWithProducts);
-      console.log(brandsWithProducts);
     } catch (error) {
       console.error("Error al obtener marcas:", error);
     }
@@ -40,11 +41,14 @@ function Productos() {
   const getCategory = async () => {
     try {
       const response = await CategoryService();
-      console.log(response);
-      const foundCategoria = response.find((item) => item.name === path);
-      console.log(foundCategoria);
-      if (foundCategoria) {
+      const response2 = await BrandService();
+      const foundCategoria = response.find((item) => item.name === path)
+        ? response.find((item) => item.name === path)
+        : response2.find((item) => item.name === path);
+      if (foundCategoria === response.find((item) => item.name === path)) {
         setCategoria(foundCategoria);
+      } else {
+        setBrand(foundCategoria);
       }
     } catch (error) {
       console.error("Error al obtener categoría:", error);
@@ -52,8 +56,13 @@ function Productos() {
   };
   const getProductosAll = async () => {
     try {
-      if (categoria?.id) {
+      if (brand?.id) {
+        const response = await getProductsxBrandww(brand?.id);
+        setProductsAll(response);
+      } else if (categoria?.id) {
+        console.log(categoria.id);
         const response = await getProducts(categoria.id);
+        console.log(response);
         setProductsAll(response);
         console.log(response);
       } else {
@@ -68,27 +77,26 @@ function Productos() {
   }, [path, pathpp]);
   useEffect(() => {
     getProductosAll();
-  }, [categoria, path]);
+  }, [categoria, path, pathpp, brand]);
   useEffect(() => {
     getBrands();
   }, [productsAll]);
 
-  const filter = (e, item=null) => {
+  const filter = (e, item = null) => {
     const sortFunctions = {
-      "1": (a, b) => a.price - b.price,
-      "2": (a, b) => b.price - a.price,
-      "3": (a, b) => a.name.trim().localeCompare(b.name.trim()),
-      "4": (a, b) => b.name.trim().localeCompare(a.name.trim()),
+      1: (a, b) => a.price - b.price,
+      2: (a, b) => b.price - a.price,
+      3: (a, b) => a.name.trim().localeCompare(b.name.trim()),
+      4: (a, b) => b.name.trim().localeCompare(a.name.trim()),
     };
-  
+
     const sortFunction = sortFunctions[e] || ((a, b) => 0);
-  
+
     const filteredProducts = [...productsAll].sort(sortFunction);
     setDataFilter(filteredProducts);
   };
-  
+
   const productsToDisplay = dataFilter.length > 0 ? dataFilter : productsAll;
-  
   return (
     <div className="py-3 px-24">
       <article className="flex justify-between gap-3">
@@ -174,15 +182,6 @@ function Productos() {
               </Link>
             ))}
           </div>
-
-          {cargarMas !== 21 && (
-            <button
-              className="text-center rounded-3xl bg-black text-white p-2 px-4 mt-5"
-              onClick={() => setCargarMas(cargarMas + 7)}
-            >
-              Cargar mas productos
-            </button>
-          )}
         </article>
       </main>
     </div>

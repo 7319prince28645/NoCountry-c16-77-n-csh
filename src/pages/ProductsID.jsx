@@ -29,6 +29,7 @@ function ProductsID({
   const { pathname } = useLocation();
   const path11 = pathname.split("/")[2];
   const path = decodeURIComponent(path11);
+  const [categoriaaaaaa, setCategoriaaaa] = useState(false);
   console.log(path);
   const getProductsIDa = async () => {
     const response = await getProductsID(id);
@@ -38,6 +39,7 @@ function ProductsID({
   const getCategory = async () => {
     try {
       const response = await CategoryService();
+      setCategoriaaaa(response);
       const foundCategoria = response.find((item) => item.name === path);
 
       if (foundCategoria) {
@@ -141,59 +143,63 @@ function ProductsID({
             </article>
           </span>
         </main>
-        <article className="p-2">
-          <h2 className="pl-1 my-5 mt-8 text-2xl font-semibold">
-            Tambien te pueden interesar
-          </h2>
-          <Swiper
-            navigation={true}
-            modules={[Navigation]}
-            className="mySwiper"
-            spaceBetween={20}
-            slidesPerView={1}
-            pagination={{
-              clickable: true,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1440: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-              },
-            }}
-          >
-            {productsFitler?.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="card px-16 h-72"
-                  onClick={() => handleClicChange(item.id)}
-                >
-                  <div className="flex items-center justify-center max-h-36">
-                    <img src={item.imageUrl} className="p-2" alt="..." />
+        {categoriaaaaaa && (
+          <article className="p-2">
+            <h2 className="pl-1 my-5 mt-8 text-2xl font-semibold">
+              Tambien te pueden interesar
+            </h2>
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper"
+              spaceBetween={20}
+              slidesPerView={1}
+              pagination={{
+                clickable: true,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                1440: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }}
+            >
+              {productsFitler?.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div
+                    className="card px-16 h-72"
+                    onClick={() => handleClicChange(item.id)}
+                  >
+                    <div className="flex items-center justify-center max-h-36">
+                      <img src={item.imageUrl} className="p-2" alt="..." />
+                    </div>
+                    <p className="text-red-900">${item.price}</p>
+                    <div className="card-body">
+                      <h5 className="card-title">{item.descripcion}</h5>
+                      <p className="card-text">
+                        <small className="text-body-secondary">
+                          Electrolux
+                        </small>
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-red-900">${item.price}</p>
-                  <div className="card-body">
-                    <h5 className="card-title">{item.descripcion}</h5>
-                    <p className="card-text">
-                      <small className="text-body-secondary">Electrolux</small>
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </article>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </article>
+        )}
       </div>
     </>
   );
