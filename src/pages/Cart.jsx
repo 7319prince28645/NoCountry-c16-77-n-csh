@@ -2,8 +2,9 @@ import React from "react";
 import ima4 from "../assets/a34.webp";
 import { useState } from "react";
 import { RiDeleteBin2Line } from "react-icons/ri";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 function Cart({ onClose, product }) {
-  const [show, setShow] = useState(false);
   const [productos, setProductos] = useState(product);
   console.log(productos);
 
@@ -11,6 +12,33 @@ function Cart({ onClose, product }) {
     const newProducts = productos.productos.filter((item, i) => i !== index);
     setProductos({ productos: newProducts });
     localStorage.setItem("carrito", JSON.stringify({ productos: newProducts }));
+  };
+  const handleCarrito = () => {
+    if (!localStorage.getItem("user")) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Debes iniciar sesión para agregar productos al carrito!",
+      });
+      // Redirigir a la página de inicio de sesión o registro si es apropiado
+      // Ejemplo: history.push("/login");
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "Compra exitosa",
+        text: "Compra realizada con éxito!",
+      });
+      const existingCartData = JSON.parse(localStorage.getItem("carrito")) || {
+        productos: [],
+      };
+
+      
+      localStorage.setItem("carritoComprado", JSON.stringify(existingCartData));
+      // Guardar los datos actualizados en el almacenamiento local
+
+      // Considera si realmente necesitas esta línea siguiente
+      // localStorage.setItem("carrito", JSON.stringify({ productos: [] }));
+    }
   };
   return (
     <>
@@ -36,20 +64,26 @@ function Cart({ onClose, product }) {
                       className="h-20 rounded-md p-2 w-20"
                     />
                     <span className="flex-1 justify-between items-end min-h-full px-4 relative">
-                      <h1 className="font-semibold text-lg pt-2">{item?.name}</h1>
+                      <h1 className="font-semibold text-lg pt-2">
+                        {item?.name}
+                      </h1>
                       <span className="flex justify-between w-full absolute bottom-0 pr-8 pb-1">
                         <p className="text-sky-600 text-sm font-semibold">
                           ${item?.price}
                         </p>
-                        <p>Total: <b className="text-sky-600"> ${item?.total}</b></p>
+                        <p>
+                          Total: <b className="text-sky-600"> ${item?.total}</b>
+                        </p>
                       </span>
                     </span>
                     <article className="flex flex-col justify-center items-center gap-4">
-                    <span className="">
+                      <span className="">
                         Cantidad: {item?.ContadorCarrito}
                       </span>
-                      <RiDeleteBin2Line onClick={() => deleteProduct(index)} className="text-2xl text-red-300"/>
-                      
+                      <RiDeleteBin2Line
+                        onClick={() => deleteProduct(index)}
+                        className="text-2xl text-red-300"
+                      />
                     </article>
                   </span>
                 </div>
@@ -59,7 +93,10 @@ function Cart({ onClose, product }) {
                 Total a pagar: $
                 {productos.productos.reduce((acc, item) => acc + item.total, 0)}
               </p>
-              <button className="py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-md w-full">
+              <button
+                className="py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-md w-full"
+                onClick={() => handleCarrito()}
+              >
                 Finalizar Compra
               </button>
             </>
