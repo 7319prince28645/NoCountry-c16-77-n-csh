@@ -76,17 +76,27 @@ function ProductsID({
     setChange(cambiar);
   };
   const handleCarrito = () => {
-    setMandarCarrito(mandarCarrito.concat());
+    // Recuperar datos del carrito del almacenamiento local
+    const existingCartData = JSON.parse(localStorage.getItem("carrito")) || {
+      productos: [],
+    };
+
+    // Agregar el nuevo producto al carrito
+    existingCartData.productos.push({
+      ...product,
+      ContadorCarrito,
+      total: product.price * ContadorCarrito,
+    });
+
+    // Guardar los datos actualizados en el almacenamiento local
+    localStorage.setItem("carrito", JSON.stringify(existingCartData));
+
+    // Abrir el modal del carrito
     openModalCarrito(true);
   };
+
   return (
     <>
-      <Carrito
-        isOpen={modalIsOpenCarrito}
-        onClose={closeModalCarrito}
-        product={mandarCarrito}
-        ContadorCarrito={ContadorCarrito}
-      />
       <div className="py-3 mt-5 xl:px-36 flex flex-col gap-4">
         <p className="pl-1">
           <span>Todos los Productos</span> - {path} <span></span> -{" "}
@@ -170,11 +180,7 @@ function ProductsID({
                   onClick={() => handleClicChange(item.id)}
                 >
                   <div className="flex items-center justify-center max-h-36">
-                  <img
-                    src={item.imageUrl}
-                    className="p-2"
-                    alt="..."
-                  />
+                    <img src={item.imageUrl} className="p-2" alt="..." />
                   </div>
                   <p className="text-red-900">${item.price}</p>
                   <div className="card-body">

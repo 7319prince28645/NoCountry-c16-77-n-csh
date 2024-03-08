@@ -122,6 +122,7 @@ function App() {
           loggedIn={loggedIn}
           usserLog={usserLog}
           usuarioLoggeado={usuarioLoggeado}
+          modalIsOpenCarrito={modalIsOpenCarrito}
         />
    
       <Routes>

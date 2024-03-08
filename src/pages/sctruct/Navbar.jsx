@@ -27,14 +27,16 @@ import BarritaInf from "./BarritaInf";
 import Buscador from "./Buscador";
 import { CategoryService } from "../../services/Cateogory.services";
 export default function Navbar({
+  setModalIsOpenCarrito,
   openModalCarrito,
   loggedIn,
   usserLog,
   usuarioLoggeado,
+  modalIsOpenCarrito,
 }) {
-  console.log(usuarioLoggeado);
-
+  console.log(modalIsOpenCarrito);
   const navigate = useNavigate();
+  console.log(navigate);
   const [category, setCategory] = useState();
   const [openBasic, setOpenBasic] = useState(false);
   const [isHomeIcon, setIsHomeIcon] = useState(true);
@@ -59,6 +61,7 @@ export default function Navbar({
 
   const closeModal = () => {
     setModalIsOpen(false);
+    setModalIsOpenCarrito(false);
   };
 
   const handleUserAdmin = () => {
@@ -77,7 +80,6 @@ export default function Navbar({
   return (
     <>
       <div className="sticky z-20 top-0 shadow-lg">
-        
         {loggedIn === false && (
           <Modal
             isOpen={modalIsOpen}
@@ -85,16 +87,28 @@ export default function Navbar({
             usserLog={usserLog}
           />
         )}
+        {openModalCarrito && (
+          <Carrito
+            isOpen={modalIsOpenCarrito}
+            onClose={closeModal}
+            usserLog={usserLog}
+            usuarioLoggeado={usuarioLoggeado}
+            setModalIsOpenCarrito={setModalIsOpenCarrito}
+          />
+        )}
         <MDBNavbar expand="lg" className="lg:px-10 lg:pt-4 lg:pb-12 relative">
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center gap-4 p-2 bg-[#16697a81] ">
-          {category?.map((item, index) => (
-            <Link to={`/Product/${item.name}`} key={index}>
-            <div key={index} className="flex gap-2 hover:text-[#9eff78] cursor-pointer font-semibold">
-              <p className="">{item.name}</p>
-            </div>
-          </Link>
-          ))}
-        </div>
+          <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center gap-4 p-2 bg-[#16697a81] ">
+            {category?.map((item, index) => (
+              <Link to={`/Product/${item.name}`} key={index}>
+                <div
+                  key={index}
+                  className="flex gap-2 hover:text-[#9eff78] cursor-pointer font-semibold"
+                >
+                  <p className="">{item.name}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
           <MDBContainer fluid>
             <Link to={"/"}>
               <img id="logo" className="w-1/4" src={logo} alt="carrito" />
